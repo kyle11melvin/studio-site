@@ -26,8 +26,10 @@ page must stay prerendered (`○ /` in the build output). No backend, no databas
    demo build (fake data). Never a screenshot of the live CRM. Names in mocks are invented.
 2. **No invented proof.** No made-up stats, testimonials, client logos or "years of experience."
    A fact on the page must be true of the real repo or app.
-3. **Status words are honest:** Live / Private / Private demo / In build. DefendItOwnIt stays
-   "In build" until its pages are published.
+3. **Status words are honest:** Live / Private / Private demo / In build. DefendItOwnIt is
+   **live** at defenditownit.com (Kyle, 2026-10-17); its repo README saying "nothing is
+   published" is out of date. Screenshots of it must crop out the "powered by REV Mortgage"
+   bar (rule 4).
 4. **No mortgage branding.** No NMLS, no Rev Mortgage, no navy/gold mortgage palette. This is a
    separate business.
 5. **Name is not final.** Kyle is choosing a studio name (a Wizard of Oz / "behind the curtain"

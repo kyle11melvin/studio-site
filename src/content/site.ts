@@ -101,7 +101,7 @@ export const featured: Featured[] = [
 export const more = [
   {
     name: "DefendItOwnIt",
-    body: "Plain answers to VA loan questions: a large answer site that turns long official rules into plain-language pages. In build.",
+    body: "Plain answers to VA loan questions: a live site with base guides, state benefit pages and allowance tools, written in plain language. defenditownit.com",
   },
   {
     name: "Finance",
