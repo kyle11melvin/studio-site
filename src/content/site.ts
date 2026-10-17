@@ -18,7 +18,7 @@ export const hero = {
   shippedLabel: "Shipped and in daily use",
 };
 
-export type FeaturedId = "switchboard" | "birddog" | "anvil" | "edge";
+export type FeaturedId = "switchboard" | "birddog" | "anvil" | "huddle" | "edge";
 
 export type Featured = {
   id: FeaturedId;
@@ -75,6 +75,19 @@ export const featured: Featured[] = [
     stack: "an installable web app on Cloudflare, tested across every workout format.",
   },
   {
+    id: "huddle",
+    name: "The Huddle",
+    tagline: "Fantasy football HQ",
+    status: "Live",
+    live: true,
+    headline: "Game day for a fantasy league, in one screen.",
+    problem:
+      "League apps bury the decisions that matter on game day under ads, menus and stale projections.",
+    built:
+      "A team headquarters that syncs the league from ESPN, projects every matchup live during the games, and flags start-or-sit calls before kickoff.",
+    stack: "React and Vite, with serverless functions on Vercel.",
+  },
+  {
     id: "edge",
     name: "Edge Desk",
     tagline: "A live market data engine",
@@ -90,10 +103,6 @@ export const featured: Featured[] = [
 ];
 
 export const more = [
-  {
-    name: "The Huddle",
-    body: "Fantasy football headquarters for a private league, with live in-game projections.",
-  },
   {
     name: "DefendItOwnIt",
     body: "A VA home loan answer site written for AI search, with 229 pages checked automatically on every build.",

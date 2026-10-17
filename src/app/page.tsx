@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Clouds } from "@/components/Clouds";
-import { AnvilMock, BirdDogMock, SwitchboardMock } from "@/components/mocks";
+import { AnvilScreen, BirdDogScreen, SwitchboardScreen } from "@/components/mocks";
 import { Showcase } from "@/components/Showcase";
 import { contact, hero, more, process, site } from "@/content/site";
 
@@ -24,8 +24,8 @@ export default function Home() {
         <header className="relative mx-auto flex max-w-[1240px] flex-wrap items-center justify-between gap-4 px-6 py-[22px]">
           <a href="#top" className="text-xl font-extrabold tracking-[-0.02em] text-white">{site.name}</a>
           <nav aria-label="Main" className="flex flex-wrap items-center gap-1">
-            <a href="#work" className="px-3.5 py-3 text-white/85 hover:text-white">Work</a>
-            <a href="#process" className="px-3.5 py-3 text-white/85 hover:text-white">How it works</a>
+            <a href="#work" className="hidden px-3.5 py-3 text-white/85 hover:text-white sm:inline">Work</a>
+            <a href="#process" className="hidden px-3.5 py-3 text-white/85 hover:text-white sm:inline">How it works</a>
             <a href="#contact" className="ml-2 rounded-full bg-white px-5 py-3 font-semibold text-ink">Start a project</a>
           </nav>
         </header>
@@ -48,7 +48,7 @@ export default function Home() {
             fill
             priority
             sizes="100vw"
-            className="object-cover mix-blend-multiply"
+            className="object-cover mix-blend-multiply [mask-image:linear-gradient(to_bottom,transparent,black_20%,black_80%,transparent)]"
           />
         </div>
 
@@ -56,14 +56,14 @@ export default function Home() {
         <div aria-hidden="true" className="relative -mt-[clamp(40px,6vw,90px)]">
           <Clouds />
           <div className="relative mx-auto flex max-w-[1100px] items-start justify-center gap-6 px-6 pb-16 pt-6">
-            <div className="hidden w-[210px] shrink-0 -rotate-[4deg] pt-16 md:block">
-              <div className="w-[300px] origin-top-left scale-[0.7]"><AnvilMock /></div>
+            <div className="hidden h-[480px] w-[210px] shrink-0 -rotate-[4deg] pt-16 md:block">
+              <div className="w-[300px] origin-top-left scale-[0.7]"><AnvilScreen /></div>
             </div>
             <div className="relative z-10 flex min-w-0 max-w-[620px] flex-1 justify-center">
-              <SwitchboardMock />
+              <SwitchboardScreen />
             </div>
-            <div className="hidden w-[210px] shrink-0 rotate-[4deg] pt-8 md:block">
-              <div className="w-[300px] origin-top-left scale-[0.7]"><BirdDogMock /></div>
+            <div className="hidden h-[480px] w-[210px] shrink-0 rotate-[4deg] pt-8 md:block">
+              <div className="w-[300px] origin-top-left scale-[0.7]"><BirdDogScreen /></div>
             </div>
           </div>
         </div>

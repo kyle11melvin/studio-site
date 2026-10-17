@@ -15,8 +15,10 @@ page must stay prerendered (`○ /` in the build output). No backend, no databas
 - `src/content/site.ts` — **all copy.** Change words there, never in components.
 - `src/app/globals.css` — **design tokens** (`@theme`). A redesign starts here.
 - `src/components/Showcase.tsx` — the interactive app switcher (the page's one bold element).
-- `src/components/mocks.tsx` — drawn stand-ins for each app's screen, each in that app's own
-  colors and type. Replace a mock with a real screenshot when one exists.
+- `src/components/mocks.tsx` — the app screens. Real screenshots live in `public/screens/`,
+  taken by running each app locally from its own repo (Switchboard with its fake-AI test
+  harness, Bird Dog with an invented demo book, ANVIL with its test workout, The Huddle with
+  its built-in sample roster). Edge Desk is still drawn. To refresh one, replace the file.
 
 ## Hard rules
 
@@ -34,7 +36,7 @@ page must stay prerendered (`○ /` in the build output). No backend, no databas
 ## Open items
 
 - Real email address (placeholder in `site.email`).
-- Real screenshots to replace the mocks.
+- Edge Desk is still a drawn screen (its board needs the live database to run).
 - Pricing: not shown yet, by choice.
 - Design pass from example sites Kyle will send.
 
@@ -42,3 +44,5 @@ page must stay prerendered (`○ /` in the build output). No backend, no databas
 
 `npm run lint && npx tsc --noEmit && npm run build`. Sandboxed sessions may fail to fetch
 Google Fonts during `next build`; that is the sandbox, not the code. Vercel fetches them fine.
+Tailwind runs through the Turbopack loader in `next.config.ts`, so a `next build --webpack`
+renders the page **unstyled**. That is a test-build artifact, not a bug on Vercel.

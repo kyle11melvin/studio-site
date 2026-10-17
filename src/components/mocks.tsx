@@ -1,124 +1,70 @@
-// Drawn stand-ins for each app's screen, in that app's own colors and type.
-// Names and numbers are SAMPLE DATA. Never put real client records here.
-// Swap a mock for a real screenshot by rendering <Image> in its place.
+import Image from "next/image";
 
-function Phone({ children }: { children: React.ReactNode }) {
+// App screens for the hero and the showcase.
+// Real screenshots (public/screens/) were taken by running each app locally from its own
+// repo: Switchboard against its stand-in AIs, Bird Dog with an invented demo book (no real
+// client ever appears here), ANVIL with its test workout, The Huddle with its built-in
+// sample roster. Edge Desk needs its live database, so it stays a drawn screen in its own
+// design. To refresh a screenshot, replace the file; the frames don't change.
+
+function Phone({ src, alt }: { src: string; alt: string }) {
   return (
-    <div className="w-[300px] max-w-full rounded-[40px] bg-[#050709] p-2.5 shadow-[0_30px_60px_-20px_rgba(22,25,31,0.45)]">
-      <div className="overflow-hidden rounded-[31px]">{children}</div>
+    <div className="w-[300px] max-w-full rounded-[44px] bg-[#050709] p-2.5 shadow-[0_30px_60px_-20px_rgba(22,25,31,0.45)]">
+      <div className="relative aspect-[390/844] overflow-hidden rounded-[35px]">
+        <Image src={src} alt={alt} fill sizes="300px" className="object-cover object-top" />
+      </div>
     </div>
   );
 }
 
-export function SwitchboardMock() {
-  const answers = [
-    { name: "Claude", text: "Software built around how you work. Every app below runs a real business today.", pick: true },
-    { name: "ChatGPT", text: "Unlock your potential with cutting-edge digital solutions tailored to you." },
-    { name: "Grok", text: "Apps so good your spreadsheet will file for unemployment." },
-  ];
+function BrowserWindow({ src, alt, label }: { src: string; alt: string; label: string }) {
   return (
     <div className="w-full max-w-[680px] overflow-hidden rounded-xl bg-white shadow-[0_30px_60px_-20px_rgba(22,25,31,0.35)]">
-      <div className="flex items-center gap-1.5 border-b border-[#e1e5ea] bg-[#f1f3f6] px-3.5 py-3">
+      <div className="flex items-center gap-1.5 border-b border-[#e1e5ea] bg-[#f1f3f6] px-3.5 py-2.5">
         <span className="size-2.5 rounded-full bg-[#e06a5c]" />
         <span className="size-2.5 rounded-full bg-[#e5b94a]" />
         <span className="size-2.5 rounded-full bg-[#6bbf6a]" />
-        <span className="ml-3 text-xs text-[#6b7280]">switchboard</span>
+        <span className="ml-3 text-xs text-[#6b7280]">{label}</span>
       </div>
-      <div className="flex flex-col gap-3.5 p-5 text-sm">
-        <div className="rounded-lg border-[1.5px] border-ink px-3.5 py-3">
-          Write the homepage copy for a one-person app studio
-        </div>
-        <div className="flex flex-wrap gap-1.5 text-xs">
-          {["Claude", "ChatGPT", "Grok"].map((m) => (
-            <span key={m} className="rounded-full bg-ink px-2.5 py-1 text-white">{m}</span>
-          ))}
-          <span className="rounded-full border border-line px-2.5 py-1 text-[#6b7280]">Perplexity</span>
-        </div>
-        <div className="grid grid-cols-3 gap-2.5">
-          {answers.map((a) => (
-            <div
-              key={a.name}
-              className={`flex flex-col gap-2 rounded-lg bg-[#f5f6f8] p-3 ${a.pick ? "outline-2 outline-accent" : ""}`}
-            >
-              <b className="text-xs">{a.name}</b>
-              <p className="text-[12px] leading-snug text-ink-soft">{a.text}</p>
-            </div>
-          ))}
-        </div>
-        <div className="flex items-center gap-2.5 rounded-lg bg-[#eef0ff] px-3.5 py-3">
-          <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2b3bff" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6 9 17l-5-5" /></svg>
-          <span><b>Judge pick: Claude.</b> Meets 4 of 4 of your project rules.</span>
-        </div>
+      <div className="relative aspect-[1280/820]">
+        <Image src={src} alt={alt} fill sizes="(min-width: 760px) 680px, 100vw" className="object-cover object-top" />
       </div>
     </div>
   );
 }
 
-export function BirdDogMock() {
-  const mission = [
-    { name: "Jordan Lee, First Team", action: "Call" },
-    { name: "Sam Patel, eXp", action: "Text" },
-    { name: "Casey Wu, Coldwell", action: "Call" },
-  ];
-  const box = "size-3.5 shrink-0 rounded";
+// The desktop window is unreadable at phone width, so phones get the phone-size screenshot.
+export function SwitchboardScreen() {
+  const alt = "Switchboard showing the top answer to a question, picked by a judge from several AIs";
   return (
-    <Phone>
-      <div className="bg-[#f4f2ec] text-[13px] text-[#0a1528]">
-        <div className="bg-[#0a1528] px-[18px] pb-4 pt-[26px] text-[#f4f2ec]">
-          <div className="font-[Georgia,serif] text-[22px]">Thursday</div>
-          <div className="text-xs text-[#c9a94b]">Agent day, 3 of 7 done</div>
-        </div>
-        <div className="flex flex-col gap-1.5 px-4 py-3.5">
-          <b className="mb-0.5 font-[Georgia,serif] text-[15px]">Your list</b>
-          <div className="flex items-center gap-2 text-[#9aa0a8] line-through"><span className={`${box} bg-[#9aa0a8]`} />Send Dana the rate sheet</div>
-          <div className="flex items-center gap-2"><span className={`${box} border-[1.5px] border-[#0a1528]`} />Lunch with Marco, 12:30</div>
-          <b className="mb-0.5 mt-2.5 font-[Georgia,serif] text-[15px]">Today&apos;s mission</b>
-          <div className="flex items-center gap-2 text-[#9aa0a8] line-through"><span className={`${box} bg-[#9aa0a8]`} />Alex Rivera, Compass</div>
-          {mission.map((m) => (
-            <div key={m.name} className="flex items-center justify-between gap-2 rounded-lg bg-white p-2">
-              <span className="flex items-center gap-2"><span className={`${box} border-[1.5px] border-[#0a1528]`} />{m.name}</span>
-              <span className="rounded-md bg-[#0a1528] px-2 py-0.5 text-[11px] text-[#c9a94b]">{m.action}</span>
-            </div>
-          ))}
-        </div>
+    <>
+      <div className="hidden w-full justify-center md:flex">
+        <BrowserWindow src="/screens/switchboard.webp" label="switchboard" alt={alt} />
       </div>
-    </Phone>
+      <div className="flex justify-center md:hidden">
+        <Phone src="/screens/switchboard-phone.webp" alt={alt} />
+      </div>
+    </>
   );
 }
 
-export function AnvilMock() {
-  const row = (n: string, what: string, dim = false) => (
-    <div className={`flex gap-2.5 ${dim ? "text-[#9aa4ae]" : ""}`}>
-      <span className="w-6 text-right text-[#9aa4ae]">{n}</span>{what}
-    </div>
-  );
-  return (
-    <Phone>
-      <div className="flex flex-col gap-3.5 bg-[#1b1f24] px-[18px] pb-5 pt-7 text-[#e6eaee]">
-        <div className="text-sm font-extrabold tracking-[0.18em] text-[#7fa6c4]">ANVIL</div>
-        <div className="rounded-[14px] bg-[#262b32] p-3.5 text-center">
-          <div className="font-display-num text-[64px] leading-none text-white">07:42</div>
-          <div className="text-xs text-[#7fa6c4]">Block A, round 2 of 3</div>
-        </div>
-        <div className="flex flex-col gap-1.5 text-[13px]">
-          <b className="text-[#7fa6c4]">A. 3 rounds</b>
-          {row("12", "DB thrusters @35s")}
-          {row("10", "Pull-ups")}
-          {row("15", "Cal row")}
-          <b className="mt-2 text-[#7fa6c4]">B. 10 min EMOM</b>
-          {row("8", "Goblet squats @53", true)}
-          {row("12", "Leg curls", true)}
-        </div>
-        <div className="flex gap-2 text-[13px]">
-          <span className="flex-1 rounded-[10px] bg-[#7fa6c4] p-2.5 text-center font-bold text-[#11151a]">Pause</span>
-          <span className="flex-1 rounded-[10px] border border-[#3a414a] p-2.5 text-center">End here</span>
-        </div>
-      </div>
-    </Phone>
+export function BirdDogScreen() {
+  return <Phone src="/screens/birddog.webp" alt="Bird Dog's day sheet with today's list and call targets (demo data)" />;
+}
+
+export function AnvilScreen({ running = false }: { running?: boolean }) {
+  return running ? (
+    <Phone src="/screens/anvil-run.webp" alt="ANVIL running a workout, round 1 of 3, with the full session on screen" />
+  ) : (
+    <Phone src="/screens/anvil.webp" alt="ANVIL with a pasted workout ready to start" />
   );
 }
 
-export function EdgeDeskMock() {
+export function HuddleScreen() {
+  return <Phone src="/screens/huddle.webp" alt="The Huddle's game-day screen for a fantasy football team" />;
+}
+
+export function EdgeDeskScreen() {
   const facts = [
     ["Reference", "Pinnacle"],
     ["Depth", "$1,840"],

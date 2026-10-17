@@ -2,13 +2,14 @@
 
 import { useState } from "react";
 import { featured, type FeaturedId } from "@/content/site";
-import { AnvilMock, BirdDogMock, EdgeDeskMock, SwitchboardMock } from "./mocks";
+import { AnvilScreen, BirdDogScreen, EdgeDeskScreen, HuddleScreen, SwitchboardScreen } from "./mocks";
 
 const screens: Record<FeaturedId, React.ComponentType> = {
-  switchboard: SwitchboardMock,
-  birddog: BirdDogMock,
-  anvil: AnvilMock,
-  edge: EdgeDeskMock,
+  switchboard: SwitchboardScreen,
+  birddog: BirdDogScreen,
+  anvil: () => <AnvilScreen running />,
+  huddle: HuddleScreen,
+  edge: EdgeDeskScreen,
 };
 
 export function Showcase() {
