@@ -12,9 +12,9 @@ export const site = {
 };
 
 export const hero = {
-  headline: "Apps and websites built around how you work.",
+  headline: "I build the tool your business keeps wishing it had.",
   intro:
-    "I'm Kyle Melvin. I design and build custom software in Orange County. The apps below run my own business every day.",
+    "I'm Kyle Melvin. I design and build custom apps and websites in Orange County. Everything below is something I built and use every day.",
   shippedLabel: "Shipped and in daily use",
 };
 
@@ -37,83 +37,79 @@ export const featured: Featured[] = [
   {
     id: "switchboard",
     name: "Switchboard",
-    tagline: "Ask every AI at once",
+    tagline: "One question, the best answer",
     status: "Live",
     live: true,
-    headline: "One question, sent to the right AIs, judged side by side.",
+    headline: "Ask once and get the answer that fits your rules.",
     problem:
-      "Comparing ChatGPT, Claude and Grok meant three tabs, three slightly different questions, and no fair way to pick a winner.",
+      "Different AI tools give different answers, and checking each one eats the time you meant to save.",
     built:
-      "A hub that sharpens the question, routes it to the AIs that suit the job, and has one model judge every answer against your project's rules.",
-    stack: "Next.js and the OpenAI and Anthropic APIs, hosted on Vercel.",
+      "A tool that sends one question to several AIs, checks each reply against your project's rules, and returns the one that holds up.",
+    stack: "Next.js and AI APIs, hosted on Vercel.",
   },
   {
     id: "birddog",
     name: "Bird Dog",
-    tagline: "A CRM that reads like a checklist",
+    tagline: "Every promised call, on time",
     status: "Private demo",
     live: false,
-    headline: "A CRM that opens to today's list instead of a database.",
+    headline: "A CRM that shows a loan officer who to call today, right on the phone.",
     problem:
-      "Off-the-shelf CRMs made a busy loan officer hunt through screens to decide who to call first.",
+      "Callbacks promised on the phone get lost in notes and inboxes, and a missed one can cost the relationship. Spreadsheets and sticky notes don't keep up with a busy phone.",
     built:
-      "A home-screen app that opens to one day sheet: promises first, then the day's mission in order. One tap to call, one tap to log, a push reminder at 7 a.m.",
-    stack:
-      "a single-file web app and a private Node server, covered by 234 automated tests.",
+      "A CRM that opens to today's promises and calls, with one tap to call, text or log the conversation.",
+    stack: "a web app and a private server, covered by 234 automated tests.",
   },
   {
     id: "anvil",
     name: "ANVIL",
-    tagline: "A workout app with rules",
+    tagline: "Workouts that respect your limits",
     status: "Live",
     live: true,
-    headline: "A workout app that remembers yesterday and respects injuries.",
+    headline: "A training app that runs the session and skips what you've ruled out.",
     problem:
-      "Workout apps shuffle random sessions, repeat muscle groups and ignore the lifts you can't do.",
-    built:
-      "Paste or generate a session, run a timer per block with the workout still on screen, and log it. Exclusions and rep caps are enforced in code, not suggested.",
-    stack: "an installable web app on Cloudflare, tested across every workout format.",
+      "Generic workout apps keep suggesting movements you can't or won't do, so you spend the session editing instead of training.",
+    built: "A workout app with timers and logging that leaves out any movement you've ruled out.",
+    stack: "an installable web app on Cloudflare.",
   },
   {
     id: "huddle",
     name: "The Huddle",
-    tagline: "Fantasy football HQ",
+    tagline: "Game day in one screen",
     status: "Live",
     live: true,
-    headline: "Game day for a fantasy league, in one screen.",
+    headline: "A fantasy football headquarters for one team in one league.",
     problem:
-      "League apps bury the decisions that matter on game day under ads, menus and stale projections.",
+      "League apps scatter scores, news and projections across tabs and menus, so lineup calls get made on stale information.",
     built:
-      "A team headquarters that syncs the league from ESPN, projects every matchup live during the games, and flags start-or-sit calls before kickoff.",
-    stack: "React and Vite, with serverless functions on Vercel.",
+      "A private hub that syncs the league from ESPN and shows live projections during the games, so every lineup call is made on current numbers.",
+    stack: "React and Vite, hosted on Vercel.",
   },
   {
     id: "edge",
     name: "Edge Desk",
-    tagline: "A live market data engine",
+    tagline: "See where prices disagree",
     status: "Private",
     live: false,
-    headline: "A data engine that measures where prices disagree, and for how long.",
-    problem:
-      "Prices on betting exchanges drift from sharp lines for minutes at a time, and nobody was recording how often or whether it paid.",
-    built:
-      "A collector that snapshots every venue every five minutes, computes value after fees, and tracks whether each gap closes before the game.",
-    stack: "Python and Postgres, with a Next.js board on top.",
+    headline: "A tracker that flags when the same thing is priced differently in different markets.",
+    problem: "Price gaps open and close fast, and watching several markets by hand means missing most of them.",
+    built: "A dashboard that watches several markets at once and shows when their prices stop agreeing.",
+    stack: "Python and Postgres, with a Next.js board.",
   },
 ];
 
 export const more = [
   {
     name: "DefendItOwnIt",
-    body: "A VA home loan answer site written for AI search, with 229 pages checked automatically on every build.",
+    body: "Plain answers to VA loan questions: a large answer site that turns long official rules into plain-language pages. In build.",
   },
   {
     name: "Finance",
-    body: "A budget app on live bank data that replaced a hand-typed spreadsheet and found the forgotten subscriptions.",
+    body: "A live budget app that finds your subscriptions and keeps each bill under the account that pays it.",
   },
   {
     name: "Markup",
-    body: "An AI-run $100K paper trading fund with hard risk limits and a public scorecard.",
+    body: "An AI-run paper-trading fund held to set risk limits, so ideas get tested without real money on the line.",
   },
 ];
 
@@ -138,7 +134,7 @@ export const process = {
 };
 
 export const contact = {
-  headline: "Tell me what you wish existed.",
+  headline: "Tell me what's slowing you down, and I'll tell you whether I can build the fix.",
   button: "Email Kyle",
   note: "A plan and a price range within one business day.",
 };

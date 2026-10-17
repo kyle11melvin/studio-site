@@ -111,7 +111,7 @@ export default function Home() {
 
         <section id="contact" className="bg-sky scroll-mt-6">
           <div className="mx-auto flex max-w-[1000px] flex-col items-center gap-8 px-6 py-32 text-center">
-            <h2 className="max-w-[14ch] font-display text-[clamp(48px,7vw,100px)] leading-[0.98] text-white [text-shadow:0_2px_30px_rgba(30,40,80,0.18)]">
+            <h2 className="max-w-[22ch] font-display text-[clamp(40px,5.5vw,76px)] leading-[1.02] text-white [text-shadow:0_2px_30px_rgba(30,40,80,0.18)]">
               {contact.headline}
             </h2>
             <a href={`mailto:${site.email}`} className={`${btn} bg-ink text-[19px] text-white hover:bg-black`}>
