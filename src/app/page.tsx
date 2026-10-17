@@ -1,8 +1,8 @@
 import Image from "next/image";
 import { Clouds } from "@/components/Clouds";
 import { AnvilScreen, BirdDogScreen, SwitchboardScreen } from "@/components/mocks";
-import { Showcase } from "@/components/Showcase";
-import { contact, hero, more, process, site } from "@/content/site";
+import { Work } from "@/components/Work";
+import { contact, hero, process, site } from "@/content/site";
 
 const btn = "inline-flex min-h-[54px] items-center rounded-full px-7 font-semibold no-underline";
 
@@ -77,19 +77,7 @@ export default function Home() {
       </section>
 
       <main>
-        <Showcase />
-
-        <section aria-labelledby="more" className="mx-auto max-w-[1240px] px-6 pb-24">
-          <h2 id="more" className="mb-6 font-display text-[clamp(36px,4.5vw,56px)] leading-none tracking-[-0.01em]">More I&apos;ve built</h2>
-          <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,260px),1fr))] gap-x-8">
-            {more.map((m) => (
-              <div key={m.name} className="border-t-2 border-ink pb-6 pt-[18px]">
-                <h3 className="mb-1.5 text-[22px] font-bold">{m.name}</h3>
-                <p className="text-ink-soft">{m.body}</p>
-              </div>
-            ))}
-          </div>
-        </section>
+        <Work />
 
         <section id="process" className="scroll-mt-6 bg-ink text-fog">
           <div className="mx-auto max-w-[1240px] px-6 py-24">

@@ -14,11 +14,15 @@ page must stay prerendered (`○ /` in the build output). No backend, no databas
 
 - `src/content/site.ts` — **all copy.** Change words there, never in components.
 - `src/app/globals.css` — **design tokens** (`@theme`). A redesign starts here.
-- `src/components/Showcase.tsx` — the interactive app switcher (the page's one bold element).
+- `src/components/Work.tsx` — the work section (Kyle picked it 2026-10-17, "Option 3"): a swipeable
+  row of app icons, each a plain `#id` link that jumps to that app's band below; then one band per
+  featured app (screen + story, sides alternating); then Finance and Markup. Icons live in
+  `public/icons/<id>.webp`, one per app id. No JavaScript: it stays a static page.
 - `src/components/mocks.tsx` — the app screens. Real screenshots live in `public/screens/`,
   taken by running each app locally from its own repo (Switchboard with its fake-AI test
   harness, Bird Dog with an invented demo book, ANVIL with its test workout, The Huddle with
-  its built-in sample roster). Edge Desk is still drawn. To refresh one, replace the file.
+  its built-in sample roster, DefendItOwnIt from its live homepage with the REV bar cropped out).
+  Edge Desk is still drawn. To refresh one, replace the file.
 
 ## Hard rules
 

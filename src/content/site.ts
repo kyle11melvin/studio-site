@@ -18,7 +18,7 @@ export const hero = {
   shippedLabel: "Shipped and in daily use",
 };
 
-export type FeaturedId = "switchboard" | "birddog" | "anvil" | "huddle" | "edge";
+export type FeaturedId = "switchboard" | "dioi" | "birddog" | "anvil" | "huddle" | "edge";
 
 export type Featured = {
   id: FeaturedId;
@@ -30,6 +30,7 @@ export type Featured = {
   problem: string;
   built: string;
   stack: string;
+  /** Public address, shown as a "Visit the live site" link. */
   href?: string;
 };
 
@@ -46,6 +47,20 @@ export const featured: Featured[] = [
     built:
       "A tool that sends one question to several AIs, checks each reply against your project's rules, and returns the one that holds up.",
     stack: "Next.js and AI APIs, hosted on Vercel.",
+  },
+  {
+    id: "dioi",
+    name: "DefendItOwnIt",
+    tagline: "Plain answers to VA loan questions",
+    status: "Live",
+    live: true,
+    headline: "A VA home loan site that answers the questions buyers actually ask, base by base.",
+    problem:
+      "VA loan rules are spread across long official documents, and borrowers struggle to find a straight answer to their own question.",
+    built:
+      "A live answer site with base guides, state benefit pages, allowance tools and plain-language answers, built to show up when people ask AI search too.",
+    stack: "Next.js and Tailwind, with automated checks on every build.",
+    href: "https://defenditownit.com",
   },
   {
     id: "birddog",
@@ -100,18 +115,25 @@ export const featured: Featured[] = [
 
 export const more = [
   {
-    name: "DefendItOwnIt",
-    body: "Plain answers to VA loan questions: a live site with base guides, state benefit pages and allowance tools, written in plain language. defenditownit.com",
-  },
-  {
+    id: "finance",
     name: "Finance",
+    tagline: "Know where your money goes",
     body: "A live budget app that finds your subscriptions and keeps each bill under the account that pays it.",
   },
   {
+    id: "markup",
     name: "Markup",
+    tagline: "A practice fund with guardrails",
     body: "An AI-run paper-trading fund held to set risk limits, so ideas get tested without real money on the line.",
   },
 ];
+
+export const work = {
+  headline: "The work",
+  intro: "Eight things I built and use. Tap one to jump to it, or keep scrolling for the full story on each.",
+  swipeHint: "Swipe for all eight",
+  moreHeadline: "More I've built",
+};
 
 export const process = {
   headline: "From idea to a link on your phone in a week.",

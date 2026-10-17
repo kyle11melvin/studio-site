@@ -48,6 +48,24 @@ export function SwitchboardScreen() {
   );
 }
 
+// A website rather than an app: a browser window at the screenshot's own proportions.
+// The "powered by REV Mortgage" bar is cropped out of the image on purpose (CLAUDE.md rule 4).
+export function DioiScreen() {
+  return (
+    <div className="w-[400px] max-w-full overflow-hidden rounded-2xl bg-white shadow-[0_40px_70px_-28px_rgba(22,25,31,0.5)]">
+      <div className="flex items-center gap-1.5 border-b border-[#e1e5ea] bg-[#eef0f3] px-3.5 py-2.5">
+        <span className="size-2.5 rounded-full bg-[#e06a5c]" />
+        <span className="size-2.5 rounded-full bg-[#e5b94a]" />
+        <span className="size-2.5 rounded-full bg-[#6bbf6a]" />
+        <span className="ml-2.5 text-xs text-[#6b7280]">defenditownit.com</span>
+      </div>
+      <div className="relative aspect-[900/1046]">
+        <Image src="/screens/dioi.webp" alt="The DefendItOwnIt homepage" fill sizes="400px" className="object-cover object-top" />
+      </div>
+    </div>
+  );
+}
+
 export function BirdDogScreen() {
   return <Phone src="/screens/birddog.webp" alt="Bird Dog's day sheet with today's list and call targets (demo data)" />;
 }
