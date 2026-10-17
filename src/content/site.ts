@@ -14,7 +14,8 @@ export const site = {
 export const hero = {
   headline: "Apps and websites built around how you work.",
   intro:
-    "I'm Kyle Melvin. I design and build custom software in Orange County, California. The apps below run my own business every day. Click through them.",
+    "I'm Kyle Melvin. I design and build custom software in Orange County. The apps below run my own business every day.",
+  shippedLabel: "Shipped and in daily use",
 };
 
 export type FeaturedId = "switchboard" | "birddog" | "anvil" | "edge";

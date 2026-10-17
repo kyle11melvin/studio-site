@@ -2,7 +2,13 @@
 
 /* Design tokens. A redesign starts here: change these, not component classes. */
 @theme {
-  --color-fog: #e8ebef;
+  --color-fog: #f3f4f6;
+  /* Dawn-over-the-ocean hero sky, top to horizon */
+  --color-sky-1: #2f4a78;
+  --color-sky-2: #4f6a9e;
+  --color-sky-3: #a9a6d0;
+  --color-sky-4: #f0c6a8;
+  --color-sky-5: #f7dcc3;
   --color-mist: #d5dae1;
   --color-ink: #16191f;
   --color-ink-soft: #3b414b;
@@ -14,6 +20,7 @@
   --color-live-ink: #13623a;
 
   --font-sans: var(--font-schibsted), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-instrument), Georgia, serif;
   --font-display-num: var(--font-anton), Impact, sans-serif;
   --font-serif: var(--font-source-serif), Georgia, serif;
   --font-mono: var(--font-plex-mono), ui-monospace, monospace;
@@ -32,6 +39,17 @@ html {
 body {
   background: var(--color-fog);
   color: var(--color-ink);
+}
+
+.bg-sky {
+  background: linear-gradient(
+    180deg,
+    var(--color-sky-1) 0%,
+    var(--color-sky-2) 45%,
+    var(--color-sky-3) 68%,
+    var(--color-sky-4) 85%,
+    var(--color-sky-5) 100%
+  );
 }
 
 :focus-visible {

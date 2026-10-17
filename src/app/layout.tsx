@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
-import { Anton, IBM_Plex_Mono, Schibsted_Grotesk, Source_Serif_4 } from "next/font/google";
+import { Anton, IBM_Plex_Mono, Instrument_Serif, Schibsted_Grotesk, Source_Serif_4 } from "next/font/google";
 import { site } from "@/content/site";
 import "./globals.css";
 
 const schibsted = Schibsted_Grotesk({ variable: "--font-schibsted", subsets: ["latin"] });
+const instrument = Instrument_Serif({ variable: "--font-instrument", subsets: ["latin"], weight: "400" });
 // The three below are used only inside the Edge Desk and ANVIL screen mockups.
 const anton = Anton({ variable: "--font-anton", subsets: ["latin"], weight: "400" });
 const sourceSerif = Source_Serif_4({ variable: "--font-source-serif", subsets: ["latin"] });
@@ -19,7 +20,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${schibsted.variable} ${anton.variable} ${sourceSerif.variable} ${plexMono.variable} antialiased`}
+      className={`${schibsted.variable} ${instrument.variable} ${anton.variable} ${sourceSerif.variable} ${plexMono.variable} antialiased`}
     >
       <body className="font-sans text-lg leading-normal">{children}</body>
     </html>
