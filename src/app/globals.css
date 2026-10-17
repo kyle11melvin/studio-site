@@ -9,6 +9,7 @@
   --color-sky-3: #a9a6d0;
   --color-sky-4: #f0c6a8;
   --color-sky-5: #f7dcc3;
+  --color-dawn: #f5f4f1; /* matches the hands photo background */
   --color-mist: #d5dae1;
   --color-ink: #16191f;
   --color-ink-soft: #3b414b;
@@ -50,6 +51,18 @@ body {
     var(--color-sky-4) 85%,
     var(--color-sky-5) 100%
   );
+}
+
+/* Hero: dark sky behind the headline, then a lavender-to-peach horizon behind the
+   hands, ending on the photo's own off-white so the multiply blend leaves no seam. */
+.sky-top {
+  background: linear-gradient(180deg, var(--color-sky-1) 0%, var(--color-sky-2) 70%, #8e93c2 100%);
+}
+.sky-low {
+  background: linear-gradient(180deg, #8e93c2 0%, #c9b3c9 25%, var(--color-sky-4) 50%, var(--color-dawn) 85%);
+}
+.bg-dawn {
+  background: var(--color-dawn);
 }
 
 :focus-visible {

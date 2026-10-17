@@ -10,15 +10,11 @@ function Phone({ children }: { children: React.ReactNode }) {
   );
 }
 
-function Bar({ w = "100%" }: { w?: string }) {
-  return <span className="block h-1.5 rounded-full bg-[#cbd1d9]" style={{ width: w }} />;
-}
-
 export function SwitchboardMock() {
   const answers = [
-    { name: "Claude", bars: ["100%", "85%", "92%", "60%"], pick: true },
-    { name: "ChatGPT", bars: ["100%", "70%", "88%", "50%"] },
-    { name: "Grok", bars: ["90%", "100%", "65%", "78%"] },
+    { name: "Claude", text: "Software built around how you work. Every app below runs a real business today.", pick: true },
+    { name: "ChatGPT", text: "Unlock your potential with cutting-edge digital solutions tailored to you." },
+    { name: "Grok", text: "Apps so good your spreadsheet will file for unemployment." },
   ];
   return (
     <div className="w-full max-w-[680px] overflow-hidden rounded-xl bg-white shadow-[0_30px_60px_-20px_rgba(22,25,31,0.35)]">
@@ -45,7 +41,7 @@ export function SwitchboardMock() {
               className={`flex flex-col gap-2 rounded-lg bg-[#f5f6f8] p-3 ${a.pick ? "outline-2 outline-accent" : ""}`}
             >
               <b className="text-xs">{a.name}</b>
-              {a.bars.map((w, i) => <Bar key={i} w={w} />)}
+              <p className="text-[12px] leading-snug text-ink-soft">{a.text}</p>
             </div>
           ))}
         </div>

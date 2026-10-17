@@ -1,3 +1,5 @@
+import Image from "next/image";
+import { Clouds } from "@/components/Clouds";
 import { AnvilMock, BirdDogMock, SwitchboardMock } from "@/components/mocks";
 import { Showcase } from "@/components/Showcase";
 import { contact, hero, more, process, site } from "@/content/site";
@@ -17,12 +19,8 @@ const shipped = [
 export default function Home() {
   return (
     <>
-      <div className="bg-sky relative overflow-hidden">
-        <div
-          aria-hidden="true"
-          className="absolute inset-x-0 bottom-[210px] h-[120px] bg-[linear-gradient(180deg,rgba(255,236,214,0)_0%,rgba(255,236,214,0.55)_60%,rgba(255,236,214,0)_100%)]"
-        />
-
+      <div className="relative overflow-hidden bg-dawn">
+        <div className="sky-top pb-20">
         <header className="relative mx-auto flex max-w-[1240px] flex-wrap items-center justify-between gap-4 px-6 py-[22px]">
           <a href="#top" className="text-xl font-extrabold tracking-[-0.02em] text-white">{site.name}</a>
           <nav aria-label="Main" className="flex flex-wrap items-center gap-1">
@@ -39,17 +37,34 @@ export default function Home() {
           <p className="max-w-[46ch] text-xl text-white/90">{hero.intro}</p>
           <a href="#contact" className={`${btn} bg-ink text-white hover:bg-black`}>Start a project</a>
         </section>
+        </div>
 
-        {/* The apps rise out of the sky. Decorative: the same apps are explained in #work. */}
-        <div aria-hidden="true" className="relative mx-auto mt-[72px] flex h-[440px] max-w-[1100px] justify-center px-6">
-          <div className="absolute left-[max(24px,calc(50%-500px))] top-[70px] hidden origin-top-left -rotate-[4deg] scale-[0.7] lg:block">
-            <AnvilMock />
-          </div>
-          <div className="relative z-10 flex w-full justify-center">
-            <SwitchboardMock />
-          </div>
-          <div className="absolute right-[max(24px,calc(50%-500px))] top-[40px] hidden origin-top-right rotate-[4deg] scale-[0.7] lg:block">
-            <BirdDogMock />
+        {/* Human hand meets machine hand. The photo's white ground disappears under
+            mix-blend-multiply, so the hands sit directly on the sky. */}
+        <div className="sky-low relative h-[clamp(260px,38vw,540px)]">
+          <Image
+            src="/hero-hands.webp"
+            alt="A human hand reaching toward a robotic hand, fingertips almost touching"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover mix-blend-multiply"
+          />
+        </div>
+
+        {/* Cloud bank the apps rise out of. Decorative; the apps are explained in #work. */}
+        <div aria-hidden="true" className="relative -mt-[clamp(40px,6vw,90px)]">
+          <Clouds />
+          <div className="relative mx-auto flex max-w-[1100px] items-start justify-center gap-6 px-6 pb-16 pt-6">
+            <div className="hidden w-[210px] shrink-0 -rotate-[4deg] pt-16 md:block">
+              <div className="w-[300px] origin-top-left scale-[0.7]"><AnvilMock /></div>
+            </div>
+            <div className="relative z-10 flex min-w-0 max-w-[620px] flex-1 justify-center">
+              <SwitchboardMock />
+            </div>
+            <div className="hidden w-[210px] shrink-0 rotate-[4deg] pt-8 md:block">
+              <div className="w-[300px] origin-top-left scale-[0.7]"><BirdDogMock /></div>
+            </div>
           </div>
         </div>
       </div>
