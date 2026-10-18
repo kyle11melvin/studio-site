@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Clouds } from "@/components/Clouds";
+import { FingerClouds } from "@/components/FingerClouds";
 import { ProjectForm } from "@/components/ProjectForm";
 import { Spark } from "@/components/Spark";
 import {
@@ -85,6 +86,7 @@ export default function Home() {
         {/* Human hand meets machine hand. The photo's white ground disappears under
             mix-blend-multiply, so the hands sit directly on the sky. */}
         <div className="sky-low relative h-[clamp(260px,38vw,540px)]">
+          <FingerClouds />
           <Image
             src="/hero-hands.webp"
             alt="A human hand reaching toward a robotic hand, fingertips almost touching"
