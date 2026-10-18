@@ -177,26 +177,49 @@ export default function Home() {
               ))}
             </ol>
 
-            {/* FAQ: the worries a small-business owner has before reaching out. Native
-                <details>, so it opens and closes with no JavaScript. */}
-            <h3 className="reveal mb-6 mt-24 font-display text-[clamp(32px,4vw,52px)] leading-none">
-              {process.faqHeadline}
-            </h3>
-            <div className="flex max-w-[820px] flex-col gap-3">
-              {process.faq.map((f) => (
-                <details
-                  key={f.q}
-                  className="reveal group rounded-[22px] border border-white/20 bg-white/10 px-6 py-5 backdrop-blur-md"
+            {/* FAQ, editorial style: a sticky intro on the left, the questions as a numbered
+                list with hairlines on the right (no boxed cards). Native <details>, so it opens
+                and closes with no JavaScript. */}
+            <div className="mt-28 grid gap-12 border-t border-white/20 pt-14 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-20">
+              <div className="reveal lg:sticky lg:top-24 lg:self-start">
+                <p className="text-[13px] font-semibold uppercase tracking-[0.24em] text-sky-4">
+                  {process.faqEyebrow}
+                </p>
+                <h3 className="mt-4 max-w-[12ch] font-display text-[clamp(40px,4.6vw,64px)] leading-[1.02]">
+                  {process.faqHeadline}
+                </h3>
+                <p className="mt-6 max-w-[34ch] text-white/80">{process.faqAside}</p>
+                <a
+                  href="#contact"
+                  className="mt-8 inline-flex min-h-[50px] items-center gap-2 rounded-full bg-white px-6 font-semibold text-ink no-underline hover:bg-white/90"
                 >
-                  <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-[19px] font-bold [&::-webkit-details-marker]:hidden">
-                    {f.q}
-                    <span aria-hidden="true" className="text-2xl font-normal text-sky-4 transition-transform group-open:rotate-45">
-                      +
-                    </span>
-                  </summary>
-                  <p className="mt-3 text-white/90">{f.a}</p>
-                </details>
-              ))}
+                  {process.faqCta}
+                  <span aria-hidden="true">&rarr;</span>
+                </a>
+              </div>
+              <div className="border-b border-white/20">
+                {process.faq.map((f, i) => (
+                  <details key={f.q} className="reveal group border-t border-white/20">
+                    <summary className="flex cursor-pointer list-none items-baseline gap-5 py-6 [&::-webkit-details-marker]:hidden">
+                      <span aria-hidden="true" className="w-8 shrink-0 font-display text-[22px] text-sky-4">
+                        {String(i + 1).padStart(2, "0")}
+                      </span>
+                      <span className="flex-1 font-display text-[clamp(24px,2.4vw,32px)] leading-tight group-hover:text-sky-5">
+                        {f.q}
+                      </span>
+                      <span
+                        aria-hidden="true"
+                        className="grid size-9 shrink-0 place-items-center rounded-full border border-white/30 text-xl leading-none text-sky-4 transition-transform duration-300 group-open:rotate-45 group-open:border-sky-4"
+                      >
+                        +
+                      </span>
+                    </summary>
+                    <p className="max-w-[56ch] pb-7 pl-[3.25rem] pr-12 text-[17px] leading-relaxed text-white/85">
+                      {f.a}
+                    </p>
+                  </details>
+                ))}
+              </div>
             </div>
           </div>
         </section>

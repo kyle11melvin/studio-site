@@ -170,35 +170,38 @@ export const process = {
       body: "You get a working first version on your phone to show people and test. Changes are a text away.",
     },
   ],
-  faqHeadline: "Questions people ask",
+  faqEyebrow: "Before you ask",
+  faqHeadline: "The questions everyone has.",
+  faqAside: "Something else on your mind? Put it in the form with your idea and we'll answer it in the plan.",
+  faqCta: "Tell us your idea",
   faq: [
     {
       q: "What does it cost?",
-      a: "There's no price list, because a one-page website and a full app are different jobs. Send the form and you get a plan and a quote for your idea within one business day.",
+      a: "There's no price list, because a one-page website and a full app are different jobs. Send your idea and you get a plan and a quote within one business day.",
     },
     {
       q: "How long does it take?",
-      a: "It depends on the idea. The plan spells out the timeline before any work starts.",
+      a: "The plan gives you a timeline before any work starts, and you see a working version along the way.",
     },
     {
       q: "Do I need to be technical?",
-      a: "No. You describe the idea in plain words, and you test it on your phone like any other app.",
+      a: "No. If you can explain the idea to a friend, you can explain it to us. You test it on your phone like any other app.",
     },
     {
       q: "Will you steal my idea?",
-      a: "No. Your idea and the code are yours, and we're happy to sign an NDA before you share the details.",
+      a: "No. Your idea and the code belong to you. Want an NDA first? We'll sign it before you share the details.",
     },
     {
       q: "Do you work for equity?",
-      a: "No. Every project is paid, so the idea stays fully yours.",
+      a: "No. Every project is paid, so you keep 100% of your idea.",
     },
     {
       q: "Can my app go in the App Store?",
-      a: "Yes, we can help you get it there. Apple and Google review every app before it goes live, so the plan includes that step and its timing.",
+      a: "Yes, we'll help you get it there. Apple and Google review every app before it goes live, so the plan builds in that step.",
     },
     {
       q: "What happens after it's built?",
-      a: "You own the code, the domain and the accounts, and there's no monthly platform fee to us. It keeps running in your name, and any developer can pick it up from there.",
+      a: "You own all of it: the code, the domain and the accounts. There's no monthly fee to us, and any developer can pick it up from there.",
     },
   ],
 };
