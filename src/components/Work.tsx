@@ -176,13 +176,13 @@ export function Work() {
         </h3>
 
         <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,300px),1fr))] gap-4 sm:gap-5">
-          {gallery.map((f) => {
+          {gallery.map((f, i) => {
             const Thumb = thumbs[f.id];
             return (
               <article
                 key={f.id}
                 id={f.id}
-                className={`reveal flex scroll-mt-4 flex-col overflow-hidden ${frosted}`}
+                className={`reveal flex scroll-mt-4 flex-col overflow-hidden ${i % 2 ? frosted : daylight}`}
               >
                 <div
                   className="relative flex h-[300px] justify-center overflow-hidden pt-8"
@@ -215,11 +215,11 @@ export function Work() {
         </div>
 
         <div className="mt-4 grid grid-cols-[repeat(auto-fit,minmax(min(100%,300px),1fr))] gap-4 sm:mt-5 sm:gap-5">
-          {more.map((m) => (
+          {more.map((m, i) => (
             <div
               key={m.id}
               id={m.id}
-              className={`reveal flex scroll-mt-4 gap-4 p-6 ${frosted}`}
+              className={`reveal flex scroll-mt-4 gap-4 p-6 ${i % 2 ? daylight : frosted}`}
             >
               <Image
                 src={icon(m.id)}

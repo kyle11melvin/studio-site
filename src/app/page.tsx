@@ -204,41 +204,42 @@ export default function Home() {
             {/* FAQ, editorial style: a sticky intro on the left, the questions as a numbered
                 list with hairlines on the right (no boxed cards). Native <details>, so it opens
                 and closes with no JavaScript. */}
-            <div className="mt-28 grid gap-12 border-t border-white/20 pt-14 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-20">
+            {/* A daylight panel, continuing the light/dark rhythm of the work section. */}
+            <div className="mt-24 grid gap-12 rounded-[32px] border border-white/70 bg-[linear-gradient(160deg,#fbf6f0,#efe8f4)] p-[clamp(24px,4vw,56px)] text-ink shadow-[0_40px_90px_-40px_rgba(5,10,30,0.8)] lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-20">
               <div className="reveal lg:sticky lg:top-24 lg:self-start">
-                <p className="text-[13px] font-semibold uppercase tracking-[0.24em] text-sky-4">
+                <p className="text-[13px] font-semibold uppercase tracking-[0.24em] text-copper-ink">
                   {process.faqEyebrow}
                 </p>
                 <h3 className="mt-4 max-w-[12ch] font-display text-[clamp(40px,4.6vw,64px)] leading-[1.02]">
                   {process.faqHeadline}
                 </h3>
-                <p className="mt-6 max-w-[34ch] text-white/80">{process.faqAside}</p>
+                <p className="mt-6 max-w-[34ch] text-ink-soft">{process.faqAside}</p>
                 <a
                   href="#contact"
-                  className="mt-8 inline-flex min-h-[50px] items-center gap-2 rounded-full bg-white px-6 font-semibold text-ink no-underline hover:bg-white/90"
+                  className="mt-8 inline-flex min-h-[50px] items-center gap-2 rounded-full bg-ink px-6 font-semibold text-white no-underline hover:bg-black"
                 >
                   {process.faqCta}
                   <span aria-hidden="true">&rarr;</span>
                 </a>
               </div>
-              <div className="border-b border-white/20">
+              <div className="border-b border-ink/15">
                 {process.faq.map((f, i) => (
-                  <details key={f.q} className="reveal group border-t border-white/20">
+                  <details key={f.q} className="reveal group border-t border-ink/15">
                     <summary className="flex cursor-pointer list-none items-baseline gap-5 py-6 [&::-webkit-details-marker]:hidden">
-                      <span aria-hidden="true" className="w-8 shrink-0 font-display text-[22px] text-sky-4">
+                      <span aria-hidden="true" className="w-8 shrink-0 font-display text-[22px] text-copper-ink">
                         {String(i + 1).padStart(2, "0")}
                       </span>
-                      <span className="flex-1 font-display text-[clamp(24px,2.4vw,32px)] leading-tight group-hover:text-sky-5">
+                      <span className="flex-1 font-display text-[clamp(24px,2.4vw,32px)] leading-tight group-hover:text-copper-ink">
                         {f.q}
                       </span>
                       <span
                         aria-hidden="true"
-                        className="grid size-9 shrink-0 place-items-center rounded-full border border-white/30 text-xl leading-none text-sky-4 transition-transform duration-300 group-open:rotate-45 group-open:border-sky-4"
+                        className="grid size-9 shrink-0 place-items-center rounded-full border border-ink/25 text-xl leading-none text-copper-ink transition-transform duration-300 group-open:rotate-45 group-open:border-copper-ink"
                       >
                         +
                       </span>
                     </summary>
-                    <p className="max-w-[56ch] pb-7 pl-[3.25rem] pr-12 text-[17px] leading-relaxed text-white/85">
+                    <p className="max-w-[56ch] pb-7 pl-[3.25rem] pr-12 text-[17px] leading-relaxed text-ink-soft">
                       {f.a}
                     </p>
                   </details>
