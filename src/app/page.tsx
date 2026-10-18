@@ -100,11 +100,11 @@ export default function Home() {
           <Spark />
           {/* The name, explained right under the fingertips (between the hands on wider
               screens; below the picture on a phone, where the gap is too narrow). */}
-          <p className="spark-line absolute hidden text-balance text-center font-display text-ink-soft sm:block">
-            {hero.sparkLine}
+          <p className="spark-line absolute hidden text-center font-display text-ink sm:block">
+            <SparkLine />
           </p>
-          <p className="absolute inset-x-0 bottom-[6%] z-20 px-6 text-center font-display text-[21px] leading-tight text-ink-soft sm:hidden">
-            {hero.sparkLine}
+          <p className="absolute inset-x-0 bottom-[4%] z-20 px-6 text-center font-display text-[28px] leading-[1.1] text-ink [text-shadow:0_1px_18px_rgba(255,255,255,0.8)] sm:hidden">
+            <SparkLine />
           </p>
         </div>
 
@@ -244,6 +244,28 @@ export default function Home() {
           tools it describes.
         </p>
       </div>
+    </>
+  );
+}
+
+// "Every idea starts as a spark. We close the gap." with the two words that make the name in
+// copper, one sentence per line (Kyle, 2026-10-17: make it pop, color and a bigger font).
+function SparkLine() {
+  const [first, second] = hero.sparkLine.split(". ");
+  const tint = (t: string) =>
+    t.split(/\b(spark|gap)\b/).map((part, i) =>
+      part === "spark" || part === "gap" ? (
+        <span key={i} className="text-copper-ink">
+          {part}
+        </span>
+      ) : (
+        part
+      ),
+    );
+  return (
+    <>
+      <span className="block">{tint(first + ".")}</span>
+      <span className="block">{tint(second)}</span>
     </>
   );
 }

@@ -17,6 +17,7 @@
   --color-line: #c9ced6;
   --color-accent: #2b3bff;
   --color-copper: #b97a56; /* Spark Gap logo hairlines and monogram slash */
+  --color-copper-ink: #9a5530; /* copper dark enough to read as text on the dawn sky */
   --color-accent-soft: #7c87ff;
   --color-live-bg: #ddf3e4;
   --color-live-ink: #13623a;
@@ -119,11 +120,12 @@ body {
   --hands-h: clamp(260px, 38vw, 540px);
   --hands-w: max(100vw, calc(var(--hands-h) * 1.7768));
   left: 50%;
-  top: calc(50% + var(--hands-w) * 0.5628 * 0.04);
-  width: calc(var(--hands-w) * 0.19);
+  top: calc(50% + var(--hands-w) * 0.5628 * 0.035);
+  width: calc(var(--hands-w) * 0.3);
   transform: translateX(-50%);
-  font-size: calc(var(--hands-w) * 0.0145);
-  line-height: 1.15;
+  font-size: calc(var(--hands-w) * 0.02);
+  line-height: 1.08;
+  text-shadow: 0 1px 24px rgba(255, 255, 255, 0.85);
 }
 
 /* Light cloud around the fingertips (FingerClouds.tsx): a box centered on the gap, 34% of the
