@@ -73,8 +73,9 @@ const bento: Bento[] = [
   },
   {
     id: "markup", span: "lg:col-span-2",
-    bg: "radial-gradient(120% 120% at 85% 40%,#15241c 0%,#0b0c0f 60%)",
-    ink: "#f3f1ea", soft: "rgba(243,241,234,0.7)", glow: "#3dbe7a", glowAt: { right: "2%", top: "-10%" },
+    // Markup's own site is near-black with warm off-white; the chevron logo is gold. No green.
+    bg: "radial-gradient(120% 120% at 85% 40%,#1c1e24 0%,#0b0c0f 60%)",
+    ink: "#f3f1ea", soft: "rgba(243,241,234,0.7)", glow: "#c9a85a", glowAt: { right: "2%", top: "-10%" },
     border: "border-white/10", chipBg: "", chipInk: "",
   },
 ];
