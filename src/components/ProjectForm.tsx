@@ -9,6 +9,8 @@ import { projectForm, site } from "@/content/site";
 const field =
   "w-full rounded-2xl border border-line bg-white px-4 py-3 text-[17px] text-ink placeholder:text-muted focus-visible:outline-accent";
 const label = "flex flex-col gap-2 text-left text-[15px] font-semibold text-ink";
+const chip =
+  "flex min-h-[44px] cursor-pointer items-center rounded-full border border-line bg-white px-4 text-[16px] text-ink has-[:checked]:border-ink has-[:checked]:bg-ink has-[:checked]:text-white has-[:focus-visible]:outline has-[:focus-visible]:outline-3 has-[:focus-visible]:outline-accent";
 
 export function ProjectForm() {
   const action = site.formEndpoint || `mailto:${site.email}`;
@@ -22,6 +24,9 @@ export function ProjectForm() {
     >
       <input type="hidden" name="_subject" value={projectForm.subject} />
 
+      {/* Only three things are required: name, email, and what's slowing them down. The
+          rest sits behind "Add more detail", a native <details>, so the form starts short
+          (cro playbook: every field costs completions) and still needs no JavaScript. */}
       <div className="grid gap-5 sm:grid-cols-2">
         <label className={label}>
           {projectForm.name}
@@ -29,26 +34,20 @@ export function ProjectForm() {
         </label>
         <label className={label}>
           {projectForm.email}
-          <input className={field} name="email" type="email" autoComplete="email" required />
-        </label>
-        <label className={label}>
-          {projectForm.business}
-          <input className={field} name="business" autoComplete="organization" />
-        </label>
-        <label className={label}>
-          {projectForm.phone}
-          <input className={field} name="phone" type="tel" autoComplete="tel" />
+          <input className={field} name="email" type="email" autoComplete="email" placeholder={projectForm.emailHint} required />
         </label>
       </div>
 
-      <fieldset className="flex flex-col gap-3">
+      <label className={label}>
+        {projectForm.problem}
+        <textarea className={`${field} min-h-[120px]`} name="slowing_you_down" placeholder={projectForm.problemHint} required />
+      </label>
+
+      <fieldset className="flex flex-col">
         <legend className="mb-3 text-[15px] font-semibold text-ink">{projectForm.kindLabel}</legend>
         <div className="flex flex-wrap gap-2.5">
           {projectForm.kinds.map((k) => (
-            <label
-              key={k}
-              className="flex cursor-pointer items-center gap-2 rounded-full border border-line bg-white px-4 py-2.5 text-[16px] text-ink has-[:checked]:border-ink has-[:checked]:bg-ink has-[:checked]:text-white"
-            >
+            <label key={k} className={chip}>
               <input type="checkbox" name="looking_for" value={k} className="sr-only" />
               {k}
             </label>
@@ -56,29 +55,45 @@ export function ProjectForm() {
         </div>
       </fieldset>
 
-      <label className={label}>
-        {projectForm.problem}
-        <textarea className={`${field} min-h-[110px]`} name="slowing_you_down" placeholder={projectForm.problemHint} required />
-      </label>
-      <label className={label}>
-        {projectForm.wishlist}
-        <textarea className={`${field} min-h-[110px]`} name="wishlist" placeholder={projectForm.wishlistHint} />
-      </label>
-      <label className={label}>
-        {projectForm.examples}
-        <textarea className={`${field} min-h-[90px]`} name="examples_and_visuals" placeholder={projectForm.examplesHint} />
-      </label>
-      <label className={label}>
-        {projectForm.timeline}
-        <select className={field} name="timeline" defaultValue="">
-          <option value="" disabled>
-            {projectForm.timelinePick}
-          </option>
-          {projectForm.timelines.map((t) => (
-            <option key={t}>{t}</option>
-          ))}
-        </select>
-      </label>
+      <details className="group rounded-2xl border border-line bg-white/60 px-5 py-4">
+        <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-[16px] font-semibold text-ink [&::-webkit-details-marker]:hidden">
+          {projectForm.more}
+          <span aria-hidden="true" className="text-xl font-normal text-muted transition-transform group-open:rotate-45">
+            +
+          </span>
+        </summary>
+        <div className="mt-5 flex flex-col gap-5">
+          <label className={label}>
+            {projectForm.wishlist}
+            <textarea className={`${field} min-h-[110px]`} name="wishlist" placeholder={projectForm.wishlistHint} />
+          </label>
+          <label className={label}>
+            {projectForm.examples}
+            <textarea className={`${field} min-h-[90px]`} name="examples_and_visuals" placeholder={projectForm.examplesHint} />
+          </label>
+          <fieldset className="flex flex-col">
+            <legend className="mb-3 text-[15px] font-semibold text-ink">{projectForm.timeline}</legend>
+            <div className="flex flex-wrap gap-2.5">
+              {projectForm.timelines.map((t) => (
+                <label key={t} className={chip}>
+                  <input type="radio" name="timeline" value={t} className="sr-only" />
+                  {t}
+                </label>
+              ))}
+            </div>
+          </fieldset>
+          <div className="grid gap-5 sm:grid-cols-2">
+            <label className={label}>
+              {projectForm.business}
+              <input className={field} name="business" autoComplete="organization" />
+            </label>
+            <label className={label}>
+              {projectForm.phone}
+              <input className={field} name="phone" type="tel" autoComplete="tel" />
+            </label>
+          </div>
+        </div>
+      </details>
 
       <button
         type="submit"
@@ -87,6 +102,7 @@ export function ProjectForm() {
         {projectForm.submit}
       </button>
       <p className="text-[15px] text-ink-soft">{projectForm.after}</p>
+      <p className="text-[14px] text-muted">{projectForm.privacy}</p>
     </form>
   );
 }
