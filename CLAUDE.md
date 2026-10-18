@@ -46,8 +46,9 @@ page must stay prerendered (`○ /` in the build output). No backend, no databas
    bar (rule 4).
 4. **No mortgage branding.** No NMLS, no Rev Mortgage, no navy/gold mortgage palette. This is a
    separate business.
-5. **Name is not final.** Kyle is choosing a studio name (a Wizard of Oz / "behind the curtain"
-   idea is on the table). Keep `site.name` the single place the name lives.
+5. **The studio is Spark Gap** (Kyle, 2026-10-17), domain sparkgap.studio. The name is the gap a
+   spark jumps across: the fingertips almost touching in the hero. A logo is coming from Kyle.
+   Keep `site.name` the single place the name lives.
 
 ## Open items
 

@@ -1,12 +1,14 @@
 // All copy for the site lives here. Change words here, not in components.
 
 export const site = {
-  name: "Kyle Melvin",
+  // Studio name (Kyle, 2026-10-17). Domain: sparkgap.studio.
+  name: "Spark Gap",
+  domain: "sparkgap.studio",
   // TODO: replace before launch
   email: "hello@example.com",
   location: "Orange County, California",
   year: 2026,
-  title: "Kyle Melvin | Custom apps and websites",
+  title: "Spark Gap | Custom apps and websites by Kyle Melvin",
   description:
     "Custom web apps and websites built around how your business works. Designed and built in Orange County, California.",
 };
