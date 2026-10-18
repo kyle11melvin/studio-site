@@ -7,8 +7,8 @@ export const site = {
   // Studio name (Kyle, 2026-10-17). Domain: sparkgapstudio.com (bought 2026-10-17).
   name: "Spark Gap",
   domain: "sparkgapstudio.com",
-  // TODO: replace before launch
-  email: "hello@example.com",
+  // Public address: an alias on Kyle's Workspace account (kyle@), so his name stays off the page.
+  email: "hello@sparkgapstudio.com",
   // Where the project form sends. A hosted form service (e.g. Formspree) that emails each
   // submission to Kyle. Empty = the form opens the visitor's mail app addressed to `email`.
   formEndpoint: "" as string,
