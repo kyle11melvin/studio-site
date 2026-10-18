@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Clouds } from "@/components/Clouds";
+import { Spark } from "@/components/Spark";
 import {
   AnvilScreen,
   BirdDogScreen,
@@ -88,6 +89,7 @@ export default function Home() {
             sizes="100vw"
             className="object-cover mix-blend-multiply [mask-image:linear-gradient(to_bottom,transparent,black_20%,black_80%,transparent)]"
           />
+          <Spark />
         </div>
 
         {/* Cloud bank the apps rise out of. Decorative; the apps are explained in #work. */}
