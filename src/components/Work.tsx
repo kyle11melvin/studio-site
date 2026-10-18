@@ -61,7 +61,7 @@ export function Work() {
     <section
       id="work"
       aria-labelledby="work-title"
-      className="scroll-mt-6 pb-32 pt-[clamp(330px,30vw,400px)]"
+      className="scroll-mt-6 pb-32 pt-[clamp(200px,18vw,240px)]"
     >
       <div className="mx-auto flex max-w-[1180px] flex-wrap items-end justify-between gap-x-8 gap-y-3 px-6 pb-7">
         <div>

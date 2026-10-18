@@ -6,20 +6,20 @@
 // Real sunset clouds: cooler violet bars sitting in the warm band, each with a bright
 // gold-pink rim where the low sun catches its underside.
 const streaks = [
-  { left: "-8%", top: 92, w: "44%", h: 26, o: 0.55, c: "#8f7fb0" },
-  { left: "-6%", top: 108, w: "40%", h: 10, o: 0.9, c: "#ffd6a6" },
-  { left: "56%", top: 120, w: "52%", h: 30, o: 0.5, c: "#8a7aae" },
-  { left: "58%", top: 140, w: "46%", h: 10, o: 0.85, c: "#ffc895" },
-  { left: "22%", top: 168, w: "36%", h: 22, o: 0.45, c: "#7d74a8" },
-  { left: "24%", top: 182, w: "32%", h: 8, o: 0.8, c: "#ffb98c" },
-  { left: "-10%", top: 222, w: "34%", h: 22, o: 0.4, c: "#6f6c9f" },
-  { left: "70%", top: 236, w: "38%", h: 20, o: 0.4, c: "#6c6a9c" },
-  { left: "36%", top: 34, w: "40%", h: 30, o: 0.8, c: "#fff1e2" },
+  { left: "-8%", top: 57, w: "44%", h: 26, o: 0.55, c: "#8f7fb0" },
+  { left: "-6%", top: 67, w: "40%", h: 10, o: 0.9, c: "#ffd6a6" },
+  { left: "56%", top: 74, w: "52%", h: 30, o: 0.5, c: "#8a7aae" },
+  { left: "58%", top: 87, w: "46%", h: 10, o: 0.85, c: "#ffc895" },
+  { left: "22%", top: 104, w: "36%", h: 22, o: 0.45, c: "#7d74a8" },
+  { left: "24%", top: 113, w: "32%", h: 8, o: 0.8, c: "#ffb98c" },
+  { left: "-10%", top: 138, w: "34%", h: 22, o: 0.4, c: "#6f6c9f" },
+  { left: "70%", top: 146, w: "38%", h: 20, o: 0.4, c: "#6c6a9c" },
+  { left: "36%", top: 21, w: "40%", h: 30, o: 0.8, c: "#fff1e2" },
 ];
 
 export function SunsetClouds() {
   return (
-    <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[380px] overflow-hidden">
+    <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[240px] overflow-hidden">
       {streaks.map((p, i) => (
         <span
           key={i}

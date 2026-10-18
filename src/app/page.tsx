@@ -142,7 +142,7 @@ export default function Home() {
         <div className="bg-dawn">
           <section
             aria-label={hero.shippedLabel}
-            className="mx-auto flex max-w-[1240px] flex-wrap items-center justify-center gap-x-10 gap-y-3 px-6 pb-6 pt-10"
+            className="mx-auto flex max-w-[1240px] flex-wrap items-center justify-center gap-x-10 gap-y-3 px-6 pb-2 pt-8"
           >
             {shipped.map((s) => (
               <span
