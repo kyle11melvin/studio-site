@@ -16,12 +16,14 @@
   --color-muted: #5b616b;
   --color-line: #c9ced6;
   --color-accent: #2b3bff;
+  --color-copper: #b97a56; /* Spark Gap logo hairlines and monogram slash */
   --color-accent-soft: #7c87ff;
   --color-live-bg: #ddf3e4;
   --color-live-ink: #13623a;
 
   --font-sans: var(--font-schibsted), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-instrument), Georgia, serif;
+  --font-logo: var(--font-cormorant), Georgia, serif;
   --font-display-num: var(--font-anton), Impact, sans-serif;
   --font-serif: var(--font-source-serif), Georgia, serif;
   --font-mono: var(--font-plex-mono), ui-monospace, monospace;

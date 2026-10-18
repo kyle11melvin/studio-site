@@ -6,6 +6,7 @@ import {
   SwitchboardScreen,
 } from "@/components/mocks";
 import { Work } from "@/components/Work";
+import { Wordmark } from "@/components/Wordmark";
 import { about, contact, hero, process, site } from "@/content/site";
 
 const btn =
@@ -29,9 +30,10 @@ export default function Home() {
           <header className="relative mx-auto flex max-w-[1240px] flex-wrap items-center justify-between gap-4 px-6 py-[22px]">
             <a
               href="#top"
-              className="text-xl font-extrabold tracking-[-0.02em] text-white"
+              aria-label={`${site.name} Studio, back to top`}
+              className="py-1"
             >
-              {site.name}
+              <Wordmark />
             </a>
             <nav
               aria-label="Main"
@@ -195,12 +197,17 @@ export default function Home() {
       </main>
 
       <div className="bg-sky-5">
-        <footer className="mx-auto flex max-w-[1240px] flex-wrap justify-between gap-3 px-6 pb-12 pt-6 text-[15px] text-ink-soft">
-          <span>
-            © {site.year} {site.name}, {site.location}
-          </span>
-          <span>This site is built with the same tools it describes.</span>
+        <footer className="mx-auto flex max-w-[1240px] flex-col items-center gap-8 px-6 pb-14 pt-10 text-center text-[15px] text-ink-soft sm:flex-row sm:justify-between sm:text-left">
+          <Wordmark tone="dark" size="lg" />
+          <div className="flex flex-col gap-1.5 text-[13px] uppercase tracking-[0.28em] text-ink-soft">
+            <span>Custom apps &amp; websites</span>
+            <span>{site.location.replace(", California", "")}</span>
+          </div>
         </footer>
+        <p className="mx-auto max-w-[1240px] px-6 pb-10 text-center text-[13px] text-ink-soft sm:text-left">
+          © {site.year} {site.name} Studio. This site is built with the same
+          tools it describes.
+        </p>
       </div>
     </>
   );
