@@ -224,7 +224,7 @@ export function Work() {
 
       {/* 3. "More we've built": a bento of brand-colored stages (Kyle, 2026-10-17: "you can do
           better than this"). ANVIL runs tall on the left; The Huddle and Edge Desk sit beside it
-          with their phones rising from the corner; Finance and Markup get their icons lit on
+          with their phones rising from the corner; Ledger and Markup get their icons lit on
           their own colors. Each stage uses the app's real palette from its repo. */}
       <div className="mx-auto max-w-[1180px] px-4 pt-14 sm:px-6">
         <h3 className="reveal mb-7 px-2 font-display text-[clamp(36px,4.5vw,56px)] leading-none sm:px-0">

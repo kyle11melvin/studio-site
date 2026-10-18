@@ -60,10 +60,10 @@ export const featured: Featured[] = [
   {
     id: "switchboard",
     name: "Switchboard",
-    tagline: "One question, the best answer",
+    tagline: "Ask once. Get the best answer",
     status: "Live",
     live: true,
-    headline: "Ask one question and get the best answer from several AIs.",
+    headline: "Sends your question to every AI, checks each reply against your rules, and hands you the winner.",
     idea:
       "Stop pasting the same question into three AIs and comparing the answers by hand.",
     built:
@@ -73,10 +73,10 @@ export const featured: Featured[] = [
   {
     id: "dioi",
     name: "DefendItOwnIt",
-    tagline: "Plain answers to VA loan questions",
+    tagline: "Your VA benefit, explained base by base",
     status: "Live",
     live: true,
-    headline: "A VA home loan site that answers the questions buyers actually ask, base by base.",
+    headline: "Straight answers on where to live, what your allowance covers, and whether buying beats renting.",
     idea:
       "VA home buyers need straight answers about their base and their benefits, and the official documents don't give them.",
     built:
@@ -87,10 +87,10 @@ export const featured: Featured[] = [
   {
     id: "birddog",
     name: "Bird Dog",
-    tagline: "Every promised call, on time",
+    tagline: "Never miss a call you promised",
     status: "Private demo",
     live: false,
-    headline: "A CRM that opens to the people you need to call today.",
+    headline: "Opens to the people you need to call today. One tap to call, text or log it.",
     idea:
       "Never lose a promised callback in a notebook or an inbox again.",
     built:
@@ -100,10 +100,10 @@ export const featured: Featured[] = [
   {
     id: "anvil",
     name: "ANVIL",
-    tagline: "Workouts that respect your limits",
+    tagline: "Your personal AI strength coach",
     status: "Live",
     live: true,
-    headline: "A training app that runs the session and skips what you've ruled out.",
+    headline: "Tell it what you can't do and what you're sick of, and it builds a session you'll actually finish.",
     idea:
       "Stop editing every generic workout to take out the moves you can't do.",
     built: "A workout app with timers and logging that leaves out any movement you've ruled out.",
@@ -112,10 +112,10 @@ export const featured: Featured[] = [
   {
     id: "huddle",
     name: "The Huddle",
-    tagline: "Game day in one screen",
+    tagline: "Your fantasy league's smartest screen",
     status: "Live",
     live: true,
-    headline: "A fantasy football headquarters for one team in one league.",
+    headline: "Live projections, news and a roster that's always set for the best lineup.",
     idea:
       "Every score, stat and projection for one fantasy team on one screen, live during the games.",
     built:
@@ -125,10 +125,10 @@ export const featured: Featured[] = [
   {
     id: "edge",
     name: "Edge Desk",
-    tagline: "See where prices disagree",
+    tagline: "Catch the price before it moves",
     status: "Private",
     live: false,
-    headline: "A tracker that flags when the same thing is priced differently in different markets.",
+    headline: "A desk that watches every market at once and flags the moment they disagree.",
     idea:
       "Price gaps between markets close fast, and watching them by hand means missing most of them.",
     built: "A dashboard that watches several markets at once and shows when their prices stop agreeing.",
@@ -139,15 +139,15 @@ export const featured: Featured[] = [
 export const more = [
   {
     id: "finance",
-    name: "Finance",
-    tagline: "Know where your money goes",
-    body: "A live budget app that finds your subscriptions and keeps each bill under the account that pays it.",
+    name: "Ledger",
+    tagline: "Manage your money smarter",
+    body: "Finds your subscriptions, shows your balance across every account, plans for the bills coming up, and tells you what's left.",
   },
   {
     id: "markup",
     name: "Markup",
-    tagline: "A practice fund with guardrails",
-    body: "An AI-run paper-trading fund held to set risk limits, so ideas get tested without real money on the line.",
+    tagline: "An AI investor that never bets the house",
+    body: "An AI-run fund that trades with hard risk limits, so you can see how it thinks before real money ever moves.",
   },
 ];
 
