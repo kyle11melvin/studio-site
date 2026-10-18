@@ -128,23 +128,24 @@ export function Work() {
         </p>
       </div>
 
+      <div className="app-row-wrap">
       <nav
         aria-label="Jump to an app"
-        className="app-row snap-x snap-mandatory scroll-px-6 overflow-x-auto pb-6 pt-2 xl:scroll-px-[calc((100vw-1132px)/2)]"
+        className="app-row snap-x snap-mandatory scroll-px-6 overflow-x-auto pb-4 pt-1 xl:scroll-px-[calc((100vw-1132px)/2)]"
       >
-        <ul className="flex w-max gap-3.5 px-6 xl:px-[calc((100vw-1132px)/2)]">
+        <ul className="flex w-max items-center gap-3.5 px-6 xl:px-[calc((100vw-1132px)/2)]">
           {cards.map((c) => (
-            <li key={c.id} className="snap-start">
+            <li key={c.id} className="app-tile snap-center py-3">
               <a
                 href={`#${c.id}`}
-                className="flex w-[148px] flex-col gap-2.5 rounded-[22px] border border-white/12 bg-white/[0.07] p-4 shadow-[0_18px_40px_-22px_rgba(5,10,30,0.8)] backdrop-blur-md transition hover:-translate-y-0.5 hover:bg-white/[0.12]"
+                className="app-tile-card flex w-[148px] flex-col gap-2.5 rounded-[22px] border border-white/12 bg-[rgba(255,255,255,0.07)] p-4 hover:bg-white/[0.12]"
               >
                 <Image
                   src={icon(c.id)}
                   alt=""
                   width={72}
                   height={72}
-                  className="rounded-[17px]"
+                  className="app-tile-icon rounded-[17px]"
                 />
                 <span className="text-[17px] font-extrabold leading-tight tracking-[-0.02em]">
                   {c.name}
@@ -157,6 +158,7 @@ export function Work() {
           ))}
         </ul>
       </nav>
+      </div>
 
       {/* 2. Flagship case studies */}
       {flagships.map((f, i) => (
