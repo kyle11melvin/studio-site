@@ -107,13 +107,15 @@ export default function Home() {
         {/* Cloud bank the apps rise out of. Decorative; the apps are explained in #work. */}
         <div aria-hidden="true" className="relative -mt-[clamp(40px,6vw,90px)]">
           <Clouds />
-          <div className="relative mx-auto flex max-w-[1100px] items-start justify-center gap-6 px-6 pb-16 pt-6">
+          <div className="relative mx-auto flex max-w-[1100px] items-start justify-center gap-6 px-6 pb-6 pt-6 md:pb-16">
             <div className="hidden h-[480px] w-[210px] shrink-0 -rotate-[4deg] pt-16 md:block">
               <div className="w-[300px] origin-top-left scale-[0.7]">
                 <AnvilScreen />
               </div>
             </div>
-            <div className="relative z-10 flex min-w-0 max-w-[620px] flex-1 justify-center">
+            {/* On a phone the hero ends on the spark line; the apps show up in the work
+                section below, so the Switchboard screen only rises out of the clouds on md+. */}
+            <div className="relative z-10 hidden min-w-0 max-w-[620px] flex-1 justify-center md:flex">
               <SwitchboardScreen />
             </div>
             <div className="hidden h-[480px] w-[210px] shrink-0 rotate-[4deg] pt-8 md:block">
