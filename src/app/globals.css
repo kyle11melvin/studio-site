@@ -101,8 +101,8 @@ body {
 
 /* The spark between the fingertips (Spark.tsx). The hands photo is 1672x941, drawn with
    object-cover in a box that is 100vw wide and clamp(260px,38vw,540px) tall, so its rendered
-   width is max(100vw, box height x 1.777). The SVG is 12.4% of that width, which puts its arc
-   ends on the two fingertips. */
+   width is max(100vw, box height x 1.777). The SVG is 12.4% of that width, so the glint spans
+   the gap between the two fingertips. */
 .spark {
   --hands-h: clamp(260px, 38vw, 540px);
   --hands-w: max(100vw, calc(var(--hands-h) * 1.7768));
@@ -111,46 +111,4 @@ body {
   left: 50.1%;
   top: calc(50% - var(--hands-w) * 0.5628 * 0.048);
   transform: translate(-50%, -50%);
-}
-.spark-glow {
-  transform-origin: 60px 30px;
-  animation: spark-pulse 2.4s ease-in-out infinite;
-}
-.spark-arc-a {
-  animation: spark-flicker-a 0.9s steps(1, end) infinite;
-}
-.spark-arc-b {
-  animation: spark-flicker-b 0.9s steps(1, end) infinite;
-}
-.spark-embers {
-  animation: spark-flicker-b 1.3s steps(1, end) infinite;
-}
-@keyframes spark-pulse {
-  0%, 100% { opacity: 0.85; transform: scale(1); }
-  50% { opacity: 1; transform: scale(1.12); }
-}
-@keyframes spark-flicker-a {
-  0% { opacity: 1; }
-  30% { opacity: 0; }
-  55% { opacity: 0.9; }
-  70% { opacity: 0; }
-  85% { opacity: 1; }
-}
-@keyframes spark-flicker-b {
-  0% { opacity: 0; }
-  30% { opacity: 1; }
-  55% { opacity: 0; }
-  70% { opacity: 0.8; }
-  85% { opacity: 0; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .spark-glow,
-  .spark-embers,
-  .spark-arc-a {
-    animation: none;
-  }
-  .spark-arc-b {
-    animation: none;
-    opacity: 0;
-  }
 }
