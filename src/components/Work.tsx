@@ -41,6 +41,11 @@ const cards = [
   ...more.map((m) => ({ id: m.id, name: m.name, line: m.tagline })),
 ];
 
+// Every other flagship is a daylight card (Kyle, 2026-10-17: alternate light and dark between
+// the apps). `.on-light` flips the text tokens back to ink inside the dark band.
+const daylight =
+  "on-light rounded-[32px] border border-white/70 bg-[linear-gradient(160deg,#fbf6f0,#efe8f4)] text-ink shadow-[0_40px_90px_-40px_rgba(5,10,30,0.8)]";
+
 const frosted =
   "rounded-[32px] border border-white/12 bg-white/[0.06] shadow-[0_40px_80px_-40px_rgba(5,10,30,0.7)] backdrop-blur-md";
 
@@ -48,7 +53,7 @@ function Status({ f }: { f: Featured }) {
   return (
     <span
       className={`rounded-full px-2.5 py-1 text-sm font-semibold ${
-        f.live ? "bg-live-bg text-live-ink" : "bg-white/15 text-ink-soft"
+        f.live ? "bg-live-bg text-live-ink" : "bg-ink/10 text-ink-soft"
       }`}
     >
       {f.status}
@@ -114,8 +119,8 @@ export function Work() {
         >
           <article
             id={f.id}
-            className={`reveal flex scroll-mt-4 flex-wrap items-center gap-x-14 gap-y-8 p-[clamp(12px,3vw,36px)] ${frosted} ${
-              i % 2 ? "flex-row-reverse" : ""
+            className={`reveal flex scroll-mt-4 flex-wrap items-center gap-x-14 gap-y-8 p-[clamp(12px,3vw,36px)] ${
+              i % 2 ? `flex-row-reverse ${daylight}` : frosted
             }`}
           >
             <div className="flex min-w-0 flex-[1.25_1_460px]">
@@ -154,7 +159,7 @@ export function Work() {
               {f.href && (
                 <a
                   href={f.href}
-                  className="font-bold text-sky-4 underline underline-offset-4"
+                  className="font-bold text-copper-ink underline underline-offset-4"
                 >
                   Visit the live site
                 </a>

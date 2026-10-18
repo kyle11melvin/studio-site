@@ -106,6 +106,12 @@ body {
   --color-ink-soft: rgba(245, 244, 241, 0.82);
   --color-muted: rgba(245, 244, 241, 0.62);
 }
+/* A light card inside a dark band: text tokens back to their daylight values. */
+.on-dark .on-light {
+  --color-ink: #16191f;
+  --color-ink-soft: #3b414b;
+  --color-muted: #5b616b;
+}
 .sky-dusk {
   background: linear-gradient(180deg, #24375f 0%, var(--color-sky-2) 30%, var(--color-sky-1) 100%);
 }
