@@ -24,8 +24,6 @@ page must stay prerendered (`○ /` in the build output). No backend, no databas
   icon-only). Icons live in `public/icons/<id>.webp`. No JavaScript: it stays a static page.
 - `Device` in `mocks.tsx` is the phone frame: metal edge, side buttons, Dynamic Island, a status bar
   in each app's own color. Kyle said the old flat black frame didn't read as a phone; keep this one.
-- The contact section carries a short personal intro (`about` in `site.ts`). Add `about.photo`
-  when Kyle sends a photo.
 - `src/components/mocks.tsx` — the app screens. Real screenshots live in `public/screens/`,
   taken by running each app locally from its own repo (Switchboard with its fake-AI test
   harness, Bird Dog with an invented demo book, ANVIL with its test workout, The Huddle with
@@ -57,7 +55,8 @@ page must stay prerendered (`○ /` in the build output). No backend, no databas
 
 - **The main CTA is the project form** (Kyle, 2026-10-17): `ProjectForm.tsx`, a "what are you looking for" form (ideas, wishlist, examples/visuals, timeline) emailed to Kyle so he can quote. **No prices or dollar figures anywhere on the site**; every project is custom. The form is plain HTML posting to a hosted form service (`site.formEndpoint`, e.g. Formspree), which is the one exception to "no backend". Until it is set, the form falls back to the visitor's mail app.
 - Placeholders still to fill: `site.email`, `site.formEndpoint`, `site.bookingUrl`, `site.phone` (the last two show "Book a call" / "Text" links only once filled).
-- Audience (Kyle, 2026-10-17): any small business, anywhere. Copy follows the `copywriting` skill from coreyhaines31/marketingskills: no invented proof, no AI tells.
+- **Audience and voice (Kyle, 2026-10-17, from a grilling session):** individuals with an idea who can't build it, not businesses with a dev budget. Hero "Have an idea? We'll build it." Studio voice, "we". **No owner name and no day job anywhere on the page.** No mention of AI tools in how the work is built. Paid projects only, no equity; NDA on request. "App" is fine (App Store help on request) but claim no App Store work until one ships. The line under the hands, "Every idea starts as a spark. We close the gap.", ties the name to the picture (Kyle's pick).
+- Copy is checked against the `copywriting`, `copy-editing` and `cro` skills from coreyhaines31/marketingskills: no invented proof, no AI tells, form kept to three required fields.
 - Design pass from example sites Kyle will send.
 
 ## Build check

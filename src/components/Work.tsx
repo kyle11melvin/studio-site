@@ -140,21 +140,15 @@ export function Work() {
               <p className="text-ink-soft">{f.headline}</p>
               <div>
                 <h4 className="text-[15px] font-bold text-muted">
-                  The problem
+                  {work.ideaLabel}
                 </h4>
-                <p className="mt-1 text-ink-soft">{f.problem}</p>
+                <p className="mt-1 text-ink-soft">{f.idea}</p>
               </div>
               <div>
                 <h4 className="text-[15px] font-bold text-muted">
-                  What I built
+                  {work.builtLabel}
                 </h4>
                 <p className="mt-1 text-ink-soft">{f.built}</p>
-              </div>
-              <div>
-                <h4 className="text-[15px] font-bold text-muted">
-                  For your business
-                </h4>
-                <p className="mt-1 text-ink-soft">{f.forYou}</p>
               </div>
               {f.href && (
                 <a
@@ -208,7 +202,6 @@ export function Work() {
                     {f.tagline}.
                   </p>
                   <p className="text-ink-soft">{f.headline}</p>
-                  <p className="text-[15px] text-muted">{f.forYou}</p>
                 </div>
               </article>
             );

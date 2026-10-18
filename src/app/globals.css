@@ -112,3 +112,16 @@ body {
   top: calc(50% - var(--hands-w) * 0.5628 * 0.048);
   transform: translate(-50%, -50%);
 }
+
+/* "Every idea starts as a spark..." sits in the empty sky just under the fingertips: a little
+   below the gap, and narrow enough to fit between the two hands. */
+.spark-line {
+  --hands-h: clamp(260px, 38vw, 540px);
+  --hands-w: max(100vw, calc(var(--hands-h) * 1.7768));
+  left: 50%;
+  top: calc(50% + var(--hands-w) * 0.5628 * 0.04);
+  width: calc(var(--hands-w) * 0.19);
+  transform: translateX(-50%);
+  font-size: calc(var(--hands-w) * 0.0145);
+  line-height: 1.15;
+}

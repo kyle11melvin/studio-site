@@ -9,7 +9,7 @@ import {
 } from "@/components/mocks";
 import { Work } from "@/components/Work";
 import { Wordmark } from "@/components/Wordmark";
-import { about, contact, hero, process, site } from "@/content/site";
+import { contact, hero, process, site } from "@/content/site";
 
 const btn =
   "inline-flex min-h-[54px] items-center rounded-full px-7 font-semibold no-underline";
@@ -55,7 +55,7 @@ export default function Home() {
               </a>
               <a
                 href="#contact"
-                className="ml-2 rounded-full bg-white px-5 py-3 font-semibold text-ink"
+                className="ml-2 whitespace-nowrap rounded-full bg-white px-4 py-2.5 text-[15px] font-semibold text-ink sm:px-5 sm:py-3 sm:text-lg"
               >
                 <span className="sm:hidden">{hero.ctaShort}</span>
                 <span className="hidden sm:inline">{hero.cta}</span>
@@ -67,7 +67,10 @@ export default function Home() {
             id="top"
             className="relative mx-auto flex max-w-[860px] flex-col items-center gap-5 px-6 pt-[48px] text-center"
           >
-            <h1 className="font-display text-balance text-[clamp(40px,5.2vw,72px)] leading-[1.02] tracking-[-0.02em] text-white [text-shadow:0_2px_30px_rgba(30,40,80,0.18)]">
+            <p className="text-[13px] font-semibold uppercase tracking-[0.24em] text-white/80 sm:text-[14px]">
+              {hero.eyebrow}
+            </p>
+            <h1 className="-mt-1 font-display text-balance text-[clamp(40px,5.2vw,72px)] leading-[1.02] tracking-[-0.02em] text-white [text-shadow:0_2px_30px_rgba(30,40,80,0.18)]">
               {hero.headline}
             </h1>
             <a
@@ -91,6 +94,14 @@ export default function Home() {
             className="object-cover mix-blend-multiply [mask-image:linear-gradient(to_bottom,transparent,black_20%,black_80%,transparent)]"
           />
           <Spark />
+          {/* The name, explained right under the fingertips (between the hands on wider
+              screens; below the picture on a phone, where the gap is too narrow). */}
+          <p className="spark-line absolute hidden text-balance text-center font-display text-ink-soft sm:block">
+            {hero.sparkLine}
+          </p>
+          <p className="absolute inset-x-0 bottom-[6%] z-20 px-6 text-center font-display text-[21px] leading-tight text-ink-soft sm:hidden">
+            {hero.sparkLine}
+          </p>
         </div>
 
         {/* Cloud bank the apps rise out of. Decorative; the apps are explained in #work. */}
@@ -206,30 +217,6 @@ export default function Home() {
                 </a>
               )}
             </p>
-
-            {/* The person behind the work, so it reads as reaching Kyle, not filing a ticket. */}
-            <div className="mt-10 flex w-full max-w-[720px] flex-col items-center gap-5 rounded-[32px] border border-white/60 bg-white/45 p-7 text-left shadow-[0_30px_70px_-40px_rgba(60,64,120,0.5)] backdrop-blur-md sm:flex-row sm:items-start sm:gap-7 sm:p-9">
-              {about.photo && (
-                <Image
-                  src={about.photo}
-                  alt={about.name}
-                  width={112}
-                  height={112}
-                  className="size-28 shrink-0 rounded-full object-cover"
-                />
-              )}
-              <div className="flex flex-col gap-3">
-                <p className="font-display text-[30px] leading-none">
-                  {about.name}
-                </p>
-                {about.lines.map((l) => (
-                  <p key={l} className="text-ink-soft">
-                    {l}
-                  </p>
-                ))}
-                <p className="font-semibold text-ink">{process.ownership}</p>
-              </div>
-            </div>
           </div>
         </section>
       </main>
