@@ -3,6 +3,7 @@ import { Clouds } from "@/components/Clouds";
 import { FingerClouds } from "@/components/FingerClouds";
 import { ProjectForm } from "@/components/ProjectForm";
 import { SkyWisps } from "@/components/SkyWisps";
+import { SunsetClouds } from "@/components/SunsetClouds";
 import { Spark } from "@/components/Spark";
 import {
   AnvilScreen,
@@ -154,6 +155,7 @@ export default function Home() {
           </section>
         </div>
         <div className="sky-night on-dark relative isolate text-ink">
+          <SunsetClouds />
           <SkyWisps set="dusk" />
           <Work />
         </div>

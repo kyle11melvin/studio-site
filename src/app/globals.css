@@ -88,9 +88,13 @@ body {
   background: linear-gradient(
     180deg,
     var(--color-dawn) 0px,
-    #b9b2d6 70px,
-    var(--color-sky-2) 150px,
-    var(--color-sky-1) 230px,
+    #f8e3cf 50px,
+    #f4c39b 120px,
+    #e79e7f 175px,
+    #b98aa6 235px,
+    #7f86bb 290px,
+    var(--color-sky-2) 340px,
+    var(--color-sky-1) 420px,
     #1c2949 45%,
     #1a2644 80%,
     #24375f 100%
