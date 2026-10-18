@@ -55,7 +55,8 @@ page must stay prerendered (`○ /` in the build output). No backend, no databas
 
 ## Open items
 
-- Real email address (placeholder in `site.email`).
+- Real email address (placeholder in `site.email`), plus `site.bookingUrl` and `site.phone`: the "Book a 15-minute call" and "Text me" buttons appear once they are filled in (Kyle, 2026-10-17: visitors should be able to email, book or text).
+- Audience (Kyle, 2026-10-17): any small business, anywhere. Copy follows the `copywriting` skill from coreyhaines31/marketingskills: no invented proof, no AI tells.
 - Pricing: not shown yet, by choice.
 - Design pass from example sites Kyle will send.
 

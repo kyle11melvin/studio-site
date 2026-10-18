@@ -6,17 +6,21 @@ export const site = {
   domain: "sparkgapstudio.com",
   // TODO: replace before launch
   email: "hello@example.com",
+  // Fill these in to show the "Book a call" and "Text me" buttons; empty hides them.
+  bookingUrl: "" as string,
+  phone: "" as string,
   location: "Orange County, California",
   year: 2026,
   title: "Spark Gap | Custom apps and websites by Kyle Melvin",
   description:
-    "Custom web apps and websites built around how your business works. Designed and built in Orange County, California.",
+    "Custom apps and websites for small businesses, built by Kyle Melvin. A working link in your first week, and you own the code.",
 };
 
 export const hero = {
   headline: "I build the tool your business keeps wishing it had.",
   intro:
-    "I'm Kyle Melvin. I design and build custom apps and websites in Orange County. Everything below is something I built and use every day.",
+    "I'm Kyle Melvin. I built my own CRM while working as a loan officer, and now I build apps and websites for small businesses.",
+  cta: "Get a plan and a price",
   shippedLabel: "Shipped and in daily use",
 };
 
@@ -43,11 +47,11 @@ export const featured: Featured[] = [
     tagline: "One question, the best answer",
     status: "Live",
     live: true,
-    headline: "Ask once and get the answer that fits your rules.",
+    headline: "Ask one question and get the best answer from several AIs.",
     problem:
-      "Different AI tools give different answers, and checking each one eats the time you meant to save.",
+      "ChatGPT, Claude and Grok often give different answers, and checking each one by hand eats the time you meant to save.",
     built:
-      "A tool that sends one question to several AIs, checks each reply against your project's rules, and returns the one that holds up.",
+      "One box that sends your question to each AI, checks every reply against the instructions you saved for that project, and shows you the one that follows them.",
     stack: "Next.js and AI APIs, hosted on Vercel.",
   },
   {
@@ -60,7 +64,7 @@ export const featured: Featured[] = [
     problem:
       "VA loan rules are spread across long official documents, and borrowers struggle to find a straight answer to their own question.",
     built:
-      "A live answer site with base guides, state benefit pages, allowance tools and plain-language answers, built to show up when people ask AI search too.",
+      "A live site with a guide for each military base, state benefit pages, allowance tools and plain-language answers, written so AI search tools can quote it.",
     stack: "Next.js and Tailwind, with automated checks on every build.",
     href: "https://defenditownit.com",
   },
@@ -70,7 +74,7 @@ export const featured: Featured[] = [
     tagline: "Every promised call, on time",
     status: "Private demo",
     live: false,
-    headline: "A CRM that shows a loan officer who to call today, right on the phone.",
+    headline: "A CRM that opens to the people a loan officer needs to call today.",
     problem:
       "Callbacks promised on the phone get lost in notes and inboxes, and a missed one can cost the relationship. Spreadsheets and sticky notes don't keep up with a busy phone.",
     built:
@@ -132,35 +136,37 @@ export const more = [
 
 export const work = {
   headline: "The work",
-  intro: "Eight things I've built. Most of them run every day. Tap one to jump to it, or keep scrolling for the story behind each.",
+  intro: "Eight apps and websites I built for myself, most of them in use every day. Tap an icon to jump to it, or keep scrolling for the story behind each.",
   swipeHint: "Swipe for all eight",
   moreHeadline: "More I've built",
 };
 
 export const process = {
-  headline: "From idea to a link on your phone in a week.",
+  headline: "A working link on your phone in the first week.",
   steps: [
     {
       title: "We write it down",
-      body: "What the tool must do, who uses it, and what done looks like. One page, agreed before any code.",
+      body: "One page: what the app must do, who uses it, and what finished looks like. We agree on it before I write any code.",
     },
     {
       title: "You use it in week one",
-      body: "A working link you can tap, not a slide deck. You react to real screens from the start.",
+      body: "You get a link you can open on your phone and react to real screens, so changes happen early, while they're cheap.",
     },
     {
       title: "Changes by text",
-      body: "Tell me what's off. Most fixes go live the same day, and every change is tested and tracked.",
+      body: "Text me what's off. Most fixes go live the same day, and every change is tested and saved in the project's history.",
     },
   ],
   ownership:
-    "You own the code, the domain and the accounts. No monthly platform fee to me, and nothing locked behind my login.",
+    "You own the code, the domain and the accounts, and there's no monthly platform fee to me. If we stop working together, everything keeps running in your name.",
 };
 
 export const contact = {
   headline: "Tell me what's slowing you down, and I'll tell you whether I can build the fix.",
-  button: "Email Kyle",
-  note: "A plan and a price range within one business day.",
+  button: "Email me",
+  bookButton: "Book a 15-minute call",
+  textButton: "Text me",
+  note: "You'll hear back within one business day with a plan and a price range.",
 };
 
 // The person behind the work, shown in the contact section. Add `photo` (a path under
@@ -170,6 +176,6 @@ export const about = {
   photo: "" as string,
   lines: [
     "I've spent more than ten years as a loan officer in Orange County, where a missed follow-up costs real money. I started building my own tools to fix that.",
-    "Now I build them for other businesses. You work with me directly, from the first call to the last fix.",
+    "Now I build them for small businesses anywhere. You work with me directly, from the first call to the last fix.",
   ],
 };

@@ -68,12 +68,12 @@ export default function Home() {
             <h1 className="font-display text-balance text-[clamp(40px,5.2vw,72px)] leading-[1.02] tracking-[-0.02em] text-white [text-shadow:0_2px_30px_rgba(30,40,80,0.18)]">
               {hero.headline}
             </h1>
-            <p className="max-w-[46ch] text-lg text-white/90">{hero.intro}</p>
+            <p className="max-w-[52ch] text-balance text-lg text-white/90">{hero.intro}</p>
             <a
               href="#contact"
               className={`${btn} bg-ink text-white hover:bg-black`}
             >
-              Start a project
+              {hero.cta}
             </a>
           </section>
         </div>
@@ -163,12 +163,31 @@ export default function Home() {
             <h2 className="max-w-[22ch] font-display text-[clamp(40px,5.5vw,76px)] leading-[1.02] text-white [text-shadow:0_2px_30px_rgba(30,40,80,0.18)]">
               {contact.headline}
             </h2>
-            <a
-              href={`mailto:${site.email}`}
-              className={`${btn} bg-ink text-[19px] text-white hover:bg-black`}
-            >
-              {contact.button}
-            </a>
+            {/* Email always shows; the call and text buttons appear once site.ts has a link or number. */}
+            <div className="flex flex-wrap justify-center gap-3">
+              <a
+                href={`mailto:${site.email}`}
+                className={`${btn} bg-ink text-[19px] text-white hover:bg-black`}
+              >
+                {contact.button}
+              </a>
+              {site.bookingUrl && (
+                <a
+                  href={site.bookingUrl}
+                  className={`${btn} bg-white text-[19px] text-ink hover:bg-white/85`}
+                >
+                  {contact.bookButton}
+                </a>
+              )}
+              {site.phone && (
+                <a
+                  href={`sms:${site.phone}`}
+                  className={`${btn} bg-white text-[19px] text-ink hover:bg-white/85`}
+                >
+                  {contact.textButton}
+                </a>
+              )}
+            </div>
             <p className="text-ink">{contact.note}</p>
 
             {/* The person behind the work, so it reads as reaching Kyle, not filing a ticket. */}
