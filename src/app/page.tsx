@@ -103,7 +103,7 @@ export default function Home() {
           <p className="spark-line absolute hidden text-center font-display text-ink sm:block">
             <SparkLine />
           </p>
-          <p className="absolute inset-x-0 bottom-[4%] z-20 px-6 text-center font-display text-[28px] leading-[1.1] text-ink [text-shadow:0_1px_18px_rgba(255,255,255,0.8)] sm:hidden">
+          <p className="absolute inset-x-0 bottom-[4%] z-20 px-6 text-center font-display text-[33px] leading-[1.08] text-ink [text-shadow:0_1px_18px_rgba(255,255,255,0.8)] sm:hidden">
             <SparkLine />
           </p>
         </div>

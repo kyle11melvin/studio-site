@@ -114,18 +114,20 @@ body {
   transform: translate(-50%, -50%);
 }
 
-/* "Every idea starts as a spark..." sits in the empty sky just under the fingertips: a little
-   below the gap, and narrow enough to fit between the two hands. */
+/* "Every idea starts as a spark. We close the gap." sits in the open sky just ABOVE the
+   fingertips (between the hands there is not enough room below them for a bigger line). The
+   block's bottom edge is 8.5% of the rendered photo height above the gap, which clears the
+   top of both index fingers; everything scales with the photo, so it holds at every width. */
 .spark-line {
   --hands-h: clamp(260px, 38vw, 540px);
   --hands-w: max(100vw, calc(var(--hands-h) * 1.7768));
   left: 50%;
-  top: calc(50% + var(--hands-w) * 0.5628 * 0.035);
-  width: calc(var(--hands-w) * 0.3);
-  transform: translateX(-50%);
-  font-size: calc(var(--hands-w) * 0.02);
+  top: calc(50% - var(--hands-w) * 0.5628 * (0.048 + 0.085));
+  width: calc(var(--hands-w) * 0.34);
+  transform: translate(-50%, -100%);
+  font-size: calc(var(--hands-w) * 0.024);
   line-height: 1.08;
-  text-shadow: 0 1px 24px rgba(255, 255, 255, 0.85);
+  text-shadow: 0 1px 24px rgba(255, 255, 255, 0.6);
 }
 
 /* Light cloud around the fingertips (FingerClouds.tsx): a box centered on the gap, 34% of the
