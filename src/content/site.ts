@@ -33,6 +33,8 @@ export const hero = {
   sparkLine: "Every idea starts as a spark. We close the gap.",
   cta: "Tell us your idea",
   ctaShort: "Share your idea",
+  // Ownership up front (Kyle, 2026-10-17): it was buried in FAQ #7.
+  trust: "You own everything we build. NDA on request.",
   // Screen-reader name for the row of app names under the hero (no visible label: Kyle, 2026-10-17).
   shippedLabel: "Apps we've built",
 };
@@ -230,9 +232,11 @@ export const process = {
     },
     {
       title: "See it working",
-      body: "You get a working first version on your phone to show people and test. Changes are a text away.",
+      body: "You get a working first version on your phone to show people and test. Changes are a text away, and you own all of it.",
     },
   ],
+  // Who you're trusting, without a name (Kyle, 2026-10-17: no owner name on the page).
+  builder: "One builder, start to finish. You talk to the person writing the code, not an account manager.",
   // A lower-commitment path for anyone not ready to fill out the form (Kyle, 2026-10-17).
   consult: {
     line: "Not ready to write it all down?",

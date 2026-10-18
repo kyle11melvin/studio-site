@@ -83,6 +83,7 @@ export default function Home() {
             >
               {hero.cta}
             </a>
+            <p className="-mt-1 text-[15px] text-white/80">{hero.trust}</p>
           </section>
         </div>
 
@@ -163,9 +164,10 @@ export default function Home() {
         <section id="process" className="sky-dusk relative isolate scroll-mt-6 text-white">
           <SkyWisps set="dusk" />
           <div className="mx-auto max-w-[1180px] px-6 pb-28 pt-40">
-            <h2 className="reveal mb-12 max-w-[18ch] font-display text-[clamp(40px,5.5vw,72px)] leading-none tracking-[-0.01em] [text-shadow:0_2px_30px_rgba(30,40,80,0.25)]">
+            <h2 className="reveal mb-5 max-w-[18ch] font-display text-[clamp(40px,5.5vw,72px)] leading-none tracking-[-0.01em] [text-shadow:0_2px_30px_rgba(30,40,80,0.25)]">
               {process.headline}
             </h2>
+            <p className="reveal mb-12 max-w-[52ch] text-[19px] text-white/85">{process.builder}</p>
             <ol className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,280px),1fr))] gap-4 sm:gap-5">
               {process.steps.map((s, i) => (
                 <li
