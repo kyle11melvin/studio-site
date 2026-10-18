@@ -113,9 +113,11 @@ export default function Home() {
             hidden, so the bank was just an empty white band under the spark line. */}
         <div aria-hidden="true" className="relative -mt-[clamp(40px,6vw,90px)] hidden md:block">
           <Clouds />
-          <div className="relative mx-auto flex max-w-[1100px] items-start justify-center gap-6 px-6 pb-6 pt-6 md:pb-16">
-            <div className="hidden h-[480px] w-[210px] shrink-0 -rotate-[4deg] pt-16 md:block">
-              <div className="w-[300px] origin-top-left scale-[0.7]">
+          <div className="relative mx-auto flex max-w-[1240px] items-start justify-center gap-4 px-6 pb-6 pt-6 md:pb-16 lg:gap-8">
+            {/* ANVIL and Bird Dog are emphasized (Kyle, 2026-10-17): bigger than the centerpiece's
+                scale, rising higher out of the clouds. */}
+            <div className="relative z-20 hidden h-[560px] w-[230px] shrink-0 -rotate-[5deg] pt-6 md:block lg:h-[680px] lg:w-[285px]">
+              <div className="w-[300px] origin-top-left scale-[0.77] lg:scale-[0.95]">
                 <AnvilScreen />
               </div>
             </div>
@@ -124,8 +126,8 @@ export default function Home() {
             <div className="relative z-10 hidden min-w-0 max-w-[620px] flex-1 justify-center md:flex">
               <DioiHeroScreen />
             </div>
-            <div className="hidden h-[480px] w-[210px] shrink-0 rotate-[4deg] pt-8 md:block">
-              <div className="w-[300px] origin-top-left scale-[0.7]">
+            <div className="relative z-20 hidden h-[560px] w-[230px] shrink-0 rotate-[5deg] md:block lg:h-[680px] lg:w-[285px]">
+              <div className="w-[300px] origin-top-left scale-[0.77] lg:scale-[0.95]">
                 <BirdDogScreen />
               </div>
             </div>
