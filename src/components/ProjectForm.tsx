@@ -23,6 +23,15 @@ export function ProjectForm() {
       className="reveal flex w-full max-w-[720px] flex-col gap-5 rounded-[32px] border border-white/60 bg-white/55 p-6 text-left shadow-[0_30px_70px_-40px_rgba(60,64,120,0.5)] backdrop-blur-md sm:p-9"
     >
       <input type="hidden" name="_subject" value={projectForm.subject} />
+      {!mailFallback && (
+        <>
+          <input type="hidden" name="_next" value={site.formThanksUrl} />
+          <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_captcha" value="false" />
+          {/* Spam trap: hidden from people, filled in by bots, and FormSubmit drops those. */}
+          <input type="text" name="_honey" tabIndex={-1} autoComplete="off" aria-hidden="true" className="hidden" />
+        </>
+      )}
 
       {/* Only three things are required: name, email, and what's slowing them down. The
           rest sits behind "Add more detail", a native <details>, so the form starts short

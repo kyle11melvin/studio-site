@@ -243,3 +243,8 @@ body {
     border-color: #e08a58;
   }
 }
+
+/* Thank-you note after the form posts and FormSubmit redirects to /#sent. */
+.sent-note:target {
+  display: block;
+}

@@ -11,7 +11,11 @@ export const site = {
   email: "hello@sparkgapstudio.com",
   // Where the project form sends. A hosted form service (e.g. Formspree) that emails each
   // submission to Kyle. Empty = the form opens the visitor's mail app addressed to `email`.
-  formEndpoint: "" as string,
+  // FormSubmit (no account, HTTPS): posts land in hello@. The first submission sends an
+  // activation email to hello@ that has to be clicked once. Swap for a Formspree URL later.
+  formEndpoint: "https://formsubmit.co/hello@sparkgapstudio.com" as string,
+  // Where FormSubmit sends the visitor after a successful submit; #sent shows the thank-you.
+  formThanksUrl: "https://sparkgapstudio.com/#sent",
   // Fill these in to show the "Book a call" and "Text me" links; empty hides them.
   bookingUrl: "" as string,
   phone: "" as string,
@@ -266,5 +270,7 @@ export const projectForm = {
   timelines: ["As soon as possible", "In the next 1 to 3 months", "Just exploring"],
   submit: "Get my plan and quote",
   after: "Only your name, email and your idea are required. We reply within one business day.",
+  thanksTitle: "Got it. Your idea is in.",
+  thanksBody: "We read every one and reply within one business day with a plan and a quote.",
   privacy: "Your idea goes to our inbox and nowhere else. We never share it, and we'll sign an NDA if you'd like.",
 };

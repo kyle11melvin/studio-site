@@ -12,7 +12,7 @@ import {
 } from "@/components/mocks";
 import { Work } from "@/components/Work";
 import { Wordmark } from "@/components/Wordmark";
-import { contact, hero, process, site } from "@/content/site";
+import { contact, hero, process, projectForm, site } from "@/content/site";
 
 const btn =
   "inline-flex min-h-[54px] items-center rounded-full px-7 font-semibold no-underline";
@@ -255,6 +255,11 @@ export default function Home() {
             <h2 className="reveal max-w-[22ch] font-display text-[clamp(40px,5.5vw,76px)] leading-[1.02] text-white [text-shadow:0_2px_30px_rgba(30,40,80,0.18)]">
               {contact.headline}
             </h2>
+            {/* Shown only when FormSubmit sends the visitor back to /#sent. */}
+            <div id="sent" className="sent-note hidden w-full max-w-[720px] scroll-mt-24 rounded-[28px] border border-live-ink/30 bg-live-bg p-6 text-left text-live-ink">
+              <p className="font-display text-[28px] leading-tight">{projectForm.thanksTitle}</p>
+              <p className="mt-1.5">{projectForm.thanksBody}</p>
+            </div>
             <ProjectForm />
 
             {/* Other ways in. Email always shows; the call and text links appear once
