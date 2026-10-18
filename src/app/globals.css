@@ -65,6 +65,33 @@ body {
   background: var(--color-dawn);
 }
 
+/* Below the hero the page keeps the sky: a pale dawn behind the work, dusk falling into
+   the process band, night into the contact section, and dawn again at the very end. */
+.sky-day {
+  background: linear-gradient(
+    180deg,
+    var(--color-dawn) 0%,
+    #efebf4 14%,
+    #f7ebe1 34%,
+    #eeeaf4 55%,
+    #f5e8de 76%,
+    #d9d3e8 100%
+  );
+}
+.sky-dusk {
+  background: linear-gradient(180deg, #d9d3e8 0%, #7f86bb 6%, var(--color-sky-2) 26%, var(--color-sky-1) 100%);
+}
+.sky-night-to-dawn {
+  background: linear-gradient(
+    180deg,
+    var(--color-sky-1) 0%,
+    var(--color-sky-2) 38%,
+    var(--color-sky-3) 64%,
+    var(--color-sky-4) 86%,
+    var(--color-sky-5) 100%
+  );
+}
+
 :focus-visible {
   outline: 3px solid var(--color-accent);
   outline-offset: 3px;

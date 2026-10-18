@@ -13,7 +13,10 @@ page must stay prerendered (`○ /` in the build output). No backend, no databas
 ## Where things live
 
 - `src/content/site.ts` — **all copy.** Change words there, never in components.
-- `src/app/globals.css` — **design tokens** (`@theme`). A redesign starts here.
+- `src/app/globals.css` — **design tokens** (`@theme`). A redesign starts here. The page is one
+  sky from top to bottom (Kyle loved the hero, disliked flat gray/black below it): dawn hero,
+  `.sky-day` behind the work (apps sit on frosted white cards), `.sky-dusk` for the process
+  band, `.sky-night-to-dawn` for contact. Don't reintroduce flat gray or black bands.
 - `src/components/Work.tsx` — the work section (Kyle picked it 2026-10-17, "Option 3"): a swipeable
   row of app icons, each a plain `#id` link that jumps to that app's band below; then one band per
   featured app (screen + story, sides alternating); then Finance and Markup. Icons live in
@@ -22,7 +25,9 @@ page must stay prerendered (`○ /` in the build output). No backend, no databas
   taken by running each app locally from its own repo (Switchboard with its fake-AI test
   harness, Bird Dog with an invented demo book, ANVIL with its test workout, The Huddle with
   its built-in sample roster, DefendItOwnIt from its live homepage with the REV bar cropped out).
-  Edge Desk is still drawn. To refresh one, replace the file.
+  Edge Desk and The Huddle use Kyle's own phone screenshots (2026-10-17, his call to show them);
+  The Huddle's is the app's header joined to his roster. Bird Dog is shot on a Monday ("Realtor
+  Calls" theme day, Kyle's pick) with an invented book. To refresh one, replace the file.
 
 ## Hard rules
 
@@ -42,7 +47,6 @@ page must stay prerendered (`○ /` in the build output). No backend, no databas
 ## Open items
 
 - Real email address (placeholder in `site.email`).
-- Edge Desk is still a drawn screen (its board needs the live database to run).
 - Pricing: not shown yet, by choice.
 - Design pass from example sites Kyle will send.
 

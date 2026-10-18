@@ -79,39 +79,9 @@ export function AnvilScreen({ running = false }: { running?: boolean }) {
 }
 
 export function HuddleScreen() {
-  return <Phone src="/screens/huddle.webp" alt="The Huddle's game-day screen for a fantasy football team" />;
+  return <Phone src="/screens/huddle.webp" alt="The Huddle: the team header above the starting roster with projected points" />;
 }
 
 export function EdgeDeskScreen() {
-  const facts = [
-    ["Reference", "Pinnacle"],
-    ["Depth", "$1,840"],
-    ["Gap open", "14 min"],
-  ];
-  return (
-    <div className="flex w-full max-w-[640px] flex-col gap-4 rounded-xl bg-[#f4f3ee] p-6 text-[#1c1f22] shadow-[0_30px_60px_-20px_rgba(22,25,31,0.35)]">
-      <div className="flex items-baseline justify-between border-b border-[#d8d5ca] pb-2.5 font-serif">
-        <span className="text-xl font-semibold">The Board</span>
-        <span className="text-sm text-[#6b6a63]">Week 7, live</span>
-      </div>
-      <div className="flex flex-wrap items-end gap-5">
-        <div>
-          <div className="font-display-num text-[clamp(64px,10vw,96px)] leading-[0.9] text-[#9a7415]">+3.1%</div>
-          <div className="font-serif text-[#6b6a63]">fee-adjusted value</div>
-        </div>
-        <div className="flex min-w-[200px] flex-1 flex-col gap-1 font-serif">
-          <b className="text-xl">Bills −2.5</b>
-          <span>Kalshi, resting order</span>
-          <span className="text-[#6b6a63]">Fair price 54.2¢, ask 51¢</span>
-        </div>
-      </div>
-      <div className="grid grid-cols-3 gap-2.5 font-mono text-[13px]">
-        {facts.map(([k, v]) => (
-          <div key={k} className="border-t-2 border-[#1c1f22] pt-2">
-            <div className="text-[#6b6a63]">{k}</div>{v}
-          </div>
-        ))}
-      </div>
-    </div>
-  );
+  return <Phone src="/screens/edge.webp" alt="Edge Desk's board flagging where one market's price disagrees with the others" />;
 }
