@@ -213,7 +213,7 @@ export const replay = {
 export const work = {
   headline: "The work",
   intro: "Eight ideas that became real apps and websites, most of them in use every day. Tap an icon to jump to one, or keep scrolling for the story behind each.",
-  swipeHint: "Swipe for all eight",
+  swipeHint: "Swipe to see all eight",
   moreHeadline: "More we've built",
   ideaLabel: "The idea",
   builtLabel: "What we built",

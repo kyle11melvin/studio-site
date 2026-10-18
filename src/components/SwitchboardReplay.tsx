@@ -22,7 +22,7 @@ export function SwitchboardReplay() {
           {replay.runs.map((r, i) => (
             <label
               key={r.label}
-              className="flex min-h-[44px] cursor-pointer items-center rounded-full border border-white/20 px-4 text-[16px] has-[:checked]:border-[#e08a58] has-[:checked]:bg-[#e08a58] has-[:checked]:text-[#0a1517] has-[:focus-visible]:outline has-[:focus-visible]:outline-3 has-[:focus-visible]:outline-[#f0aa80]"
+              className="flex min-h-[50px] cursor-pointer items-center rounded-full border-2 border-white/25 px-5 text-[17px] transition-colors has-[:checked]:border-[#e08a58] has-[:checked]:bg-[#e08a58] has-[:checked]:text-[#0a1517] has-[:focus-visible]:outline has-[:focus-visible]:outline-3 has-[:focus-visible]:outline-[#f0aa80]"
             >
               <input type="radio" name="replay" id={`replay-${i}`} defaultChecked={i === 0} className="sr-only" />
               {r.label}

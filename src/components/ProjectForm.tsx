@@ -10,7 +10,7 @@ const field =
   "w-full rounded-2xl border border-line bg-white px-4 py-3 text-[17px] text-ink placeholder:text-muted focus-visible:outline-accent";
 const label = "flex flex-col gap-2 text-left text-[15px] font-semibold text-ink";
 const chip =
-  "flex min-h-[44px] cursor-pointer items-center rounded-full border border-line bg-white px-4 text-[16px] text-ink has-[:checked]:border-ink has-[:checked]:bg-ink has-[:checked]:text-white has-[:focus-visible]:outline has-[:focus-visible]:outline-3 has-[:focus-visible]:outline-accent";
+  "group/chip flex min-h-[50px] cursor-pointer items-center gap-1.5 rounded-full border-2 border-line bg-white px-5 text-[17px] text-ink transition-colors has-[:checked]:border-ink has-[:checked]:bg-ink has-[:checked]:text-white has-[:focus-visible]:outline has-[:focus-visible]:outline-3 has-[:focus-visible]:outline-accent";
 
 export function ProjectForm() {
   const action = site.formEndpoint || `mailto:${site.email}`;
@@ -58,6 +58,7 @@ export function ProjectForm() {
           {projectForm.kinds.map((k) => (
             <label key={k} className={chip}>
               <input type="checkbox" name="looking_for" value={k} className="sr-only" />
+              <span aria-hidden="true" className="hidden group-has-[:checked]/chip:inline">&#10003;</span>
               {k}
             </label>
           ))}
@@ -86,6 +87,7 @@ export function ProjectForm() {
               {projectForm.timelines.map((t) => (
                 <label key={t} className={chip}>
                   <input type="radio" name="timeline" value={t} className="sr-only" />
+                  <span aria-hidden="true" className="hidden group-has-[:checked]/chip:inline">&#10003;</span>
                   {t}
                 </label>
               ))}

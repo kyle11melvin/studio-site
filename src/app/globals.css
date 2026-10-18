@@ -290,3 +290,33 @@ body:has(#contact:target) .sticky-cta,
 body:has(#sent:target) .sticky-cta {
   display: none;
 }
+
+/* App icon row: a visible scrollbar on touch screens (Switchboard review), a fade at the right
+   edge so the cut-off card reads as "more this way", and a nudging arrow by the hint. */
+.app-row {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(245, 244, 241, 0.45) transparent;
+  mask-image: linear-gradient(to right, black calc(100% - 56px), transparent);
+}
+.app-row::-webkit-scrollbar {
+  height: 6px;
+}
+.app-row::-webkit-scrollbar-thumb {
+  border-radius: 99px;
+  background: rgba(245, 244, 241, 0.45);
+}
+@media (min-width: 1280px) {
+  .app-row {
+    mask-image: none;
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .swipe-nudge {
+    display: inline-block;
+    animation: swipe-nudge 1.6s ease-in-out infinite;
+  }
+}
+@keyframes swipe-nudge {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(6px); }
+}

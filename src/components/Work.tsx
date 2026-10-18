@@ -122,12 +122,15 @@ export function Work() {
           </h2>
           <p className="mt-4 max-w-[52ch] text-ink-soft">{work.intro}</p>
         </div>
-        <p className="text-[15px] text-muted">{work.swipeHint}</p>
+        <p className="flex items-center gap-2 text-[15px] font-semibold text-ink-soft">
+          {work.swipeHint}
+          <span aria-hidden="true" className="swipe-nudge text-[20px] leading-none text-sky-4">&rarr;</span>
+        </p>
       </div>
 
       <nav
         aria-label="Jump to an app"
-        className="snap-x snap-mandatory scroll-px-6 overflow-x-auto pb-6 pt-2 xl:scroll-px-[calc((100vw-1132px)/2)]"
+        className="app-row snap-x snap-mandatory scroll-px-6 overflow-x-auto pb-6 pt-2 xl:scroll-px-[calc((100vw-1132px)/2)]"
       >
         <ul className="flex w-max gap-3.5 px-6 xl:px-[calc((100vw-1132px)/2)]">
           {cards.map((c) => (
