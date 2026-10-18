@@ -87,14 +87,14 @@ export const featured: Featured[] = [
   {
     id: "birddog",
     name: "Bird Dog",
-    tagline: "Never miss a call you promised",
+    tagline: "Know who to call, and why",
     status: "Private demo",
     live: false,
-    headline: "Opens to the people you need to call today. One tap to call, text or log it.",
+    headline: "A custom CRM built for loan officers. Every day has a theme, so at the desk or on the go, the first call is already picked.",
     idea:
-      "Never lose a promised callback in a notebook or an inbox again.",
+      "A notebook and an inbox can't tell you which relationships are going cold, or who's worth the next call.",
     built:
-      "A CRM that opens to today's promises and calls, with one tap to call, text or log the conversation.",
+      "A CRM that ranks every contact by how close you are and how long it's been, maps who knows whom among local agents, and keeps each relationship on a cadence. Open it and today's list is ready, with one tap to call, text or log it.",
     stack: "a web app and a private server, covered by 234 automated tests.",
   },
   {
