@@ -1,9 +1,9 @@
 // All copy for the site lives here. Change words here, not in components.
 
 export const site = {
-  // Studio name (Kyle, 2026-10-17). Domain: sparkgap.studio.
+  // Studio name (Kyle, 2026-10-17). Domain: sparkgapstudio.com (bought 2026-10-17).
   name: "Spark Gap",
-  domain: "sparkgap.studio",
+  domain: "sparkgapstudio.com",
   // TODO: replace before launch
   email: "hello@example.com",
   location: "Orange County, California",

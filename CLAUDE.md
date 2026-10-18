@@ -46,7 +46,7 @@ page must stay prerendered (`○ /` in the build output). No backend, no databas
    bar (rule 4).
 4. **No mortgage branding.** No NMLS, no Rev Mortgage, no navy/gold mortgage palette. This is a
    separate business.
-5. **The studio is Spark Gap** (Kyle, 2026-10-17), domain sparkgap.studio. The name is the gap a
+5. **The studio is Spark Gap** (Kyle, 2026-10-17), domain sparkgapstudio.com (bought 2026-10-17). The name is the gap a
    spark jumps across: the fingertips almost touching in the hero. Logo (from Kyle's ChatGPT
    concept, rebuilt as live type): `Wordmark.tsx` ("SPARK GAP" in Cormorant Garamond 600, tracked
    caps, "STUDIO" between copper hairlines) and the S/G monogram with a copper slash as
