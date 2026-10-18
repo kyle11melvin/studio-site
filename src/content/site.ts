@@ -149,29 +149,63 @@ export const more = [
   },
 ];
 
-// Switchboard replay (Kyle, 2026-10-17): visitors pick a sample idea and watch Switchboard's
-// answers appear: three AIs side by side, then the one that won. RULE: every run here must be a
-// REAL saved Switchboard run, pasted verbatim from the app (no invented answers). The section
-// stays hidden until `runs` has entries.
+// Switchboard replay (Kyle, 2026-10-17): visitors pick a sample idea and watch how
+// Switchboard works: three answers side by side, a judging beat, then the pick. These are
+// ILLUSTRATIVE examples written for the demo (Kyle's call: no live AI calls). So the copy says
+// "example", and the answers are labeled Answer A/B/C, never attributed to a named AI.
 export type ReplayRun = {
   /** Short label on the picker chip. */
   label: string;
-  /** The question exactly as typed into Switchboard. */
+  /** The example question. */
   idea: string;
   answers: { ai: string; text: string }[];
-  /** Index into `answers` of the one Switchboard picked. */
+  /** Index into `answers` of the one Switchboard picks. */
   winner: number;
-  /** Switchboard's one-line reason for the pick. */
+  /** The one-line reason for the pick. */
   why: string;
 };
 
 export const replay = {
-  eyebrow: "Try it",
-  headline: "One question. Three AIs. One answer.",
-  intro: "Pick an idea and watch Switchboard work. These are real, saved runs.",
+  eyebrow: "See how it works",
+  headline: "One question. Three answers. One pick.",
+  intro: "An example of Switchboard at work. Pick an idea: three AIs answer, each answer is checked against the rules, and the best one wins.",
   judging: "Checking each answer against the rules",
   picked: "Switchboard's pick",
-  runs: [] as ReplayRun[],
+  runs: [
+    {
+      label: "Dog-walking app",
+      idea: "I have an idea for an app where neighbors book each other to walk their dogs. What should the first version do?",
+      answers: [
+        { ai: "Answer A", text: "Three screens: post a walk you need, see neighbors nearby who can take it, confirm a time. Launch on one street and add payments once people actually use it." },
+        { ai: "Answer B", text: "Build a full pet-care platform: payments, ratings, GPS tracking, chat, insurance and a rewards program, so you can compete with the big apps from day one." },
+        { ai: "Answer C", text: "Skip the app at first. Run it as a group text and a sign-up sheet for a month, then build only what people keep asking for." },
+      ],
+      winner: 0,
+      why: "Small enough to build fast and test with real neighbors, with a clear next step once it works.",
+    },
+    {
+      label: "Meal-prep website",
+      idea: "I want a simple website for my meal-prep side business. What does it need on day one?",
+      answers: [
+        { ai: "Answer A", text: "This week's menu, prices, an order button that texts or emails you, and pickup times. One page that's easy to update every Sunday." },
+        { ai: "Answer B", text: "A blog, a recipe library, a newsletter, customer accounts and a loyalty program, so the site keeps people coming back." },
+        { ai: "Answer C", text: "Just post on Instagram and take orders in DMs until you have enough customers to justify a site." },
+      ],
+      winner: 0,
+      why: "It answers the only questions customers have, what's on the menu and how to order, and you can run it in five minutes a week.",
+    },
+    {
+      label: "Stay-in-touch app",
+      idea: "I have an idea for an app that reminds people to call friends they haven't talked to in a while. How would I test it before building it?",
+      answers: [
+        { ai: "Answer A", text: "Build the full app with contact syncing, smart reminders and call tracking, then see whether people like it." },
+        { ai: "Answer B", text: "Ask ten friends to send you three names each. Text them a reminder every week for a month and count how many calls actually happen. If most of them call, build it." },
+        { ai: "Answer C", text: "Run a survey asking people whether they'd use an app like this." },
+      ],
+      winner: 1,
+      why: "It tests the real behavior, whether people actually make the call, for almost no cost before anything is built.",
+    },
+  ] as ReplayRun[],
 };
 
 export const work = {
