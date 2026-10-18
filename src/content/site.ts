@@ -145,6 +145,31 @@ export const more = [
   },
 ];
 
+// Switchboard replay (Kyle, 2026-10-17): visitors pick a sample idea and watch Switchboard's
+// answers appear: three AIs side by side, then the one that won. RULE: every run here must be a
+// REAL saved Switchboard run, pasted verbatim from the app (no invented answers). The section
+// stays hidden until `runs` has entries.
+export type ReplayRun = {
+  /** Short label on the picker chip. */
+  label: string;
+  /** The question exactly as typed into Switchboard. */
+  idea: string;
+  answers: { ai: string; text: string }[];
+  /** Index into `answers` of the one Switchboard picked. */
+  winner: number;
+  /** Switchboard's one-line reason for the pick. */
+  why: string;
+};
+
+export const replay = {
+  eyebrow: "Try it",
+  headline: "One question. Three AIs. One answer.",
+  intro: "Pick an idea and watch Switchboard work. These are real, saved runs.",
+  judging: "Checking each answer against the rules",
+  picked: "Switchboard's pick",
+  runs: [] as ReplayRun[],
+};
+
 export const work = {
   headline: "The work",
   intro: "Eight ideas that became real apps and websites, most of them in use every day. Tap an icon to jump to one, or keep scrolling for the story behind each.",

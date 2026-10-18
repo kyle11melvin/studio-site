@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { featured, more, work, type Featured } from "@/content/site";
+import { SwitchboardReplay } from "@/components/SwitchboardReplay";
 import {
   AnvilScreen,
   EdgeDeskScreen,
@@ -168,6 +169,9 @@ export function Work() {
           </article>
         </div>
       ))}
+
+      {/* Switchboard is the last flagship; its replay sits right under it. */}
+      <SwitchboardReplay />
 
       {/* 3. Compact gallery */}
       <div className="mx-auto max-w-[1180px] px-4 pt-12 sm:px-6">
