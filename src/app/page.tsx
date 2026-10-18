@@ -182,6 +182,23 @@ export default function Home() {
               ))}
             </ol>
 
+            {/* The low-resistance path: a free call for people the form feels like too much for.
+                Opens the booking page once site.bookingUrl is set; until then, an email asking
+                for a call. */}
+            <div className="reveal mt-10 flex flex-col items-start gap-5 rounded-[28px] border border-sky-4/40 bg-white/[0.08] p-7 backdrop-blur-md sm:flex-row sm:items-center sm:justify-between sm:p-8">
+              <div>
+                <p className="font-display text-[clamp(26px,2.6vw,34px)] leading-tight">{process.consult.line}</p>
+                <p className="mt-1.5 text-white/85">{process.consult.sub}</p>
+              </div>
+              <a
+                href={site.bookingUrl || `mailto:${site.email}?subject=${encodeURIComponent("Free consultation")}`}
+                className="inline-flex min-h-[54px] shrink-0 items-center gap-2 rounded-full bg-sky-4 px-7 font-semibold text-ink no-underline hover:bg-sky-5"
+              >
+                {process.consult.button}
+                <span aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+
             {/* FAQ, editorial style: a sticky intro on the left, the questions as a numbered
                 list with hairlines on the right (no boxed cards). Native <details>, so it opens
                 and closes with no JavaScript. */}

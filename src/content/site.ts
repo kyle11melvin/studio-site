@@ -170,6 +170,12 @@ export const process = {
       body: "You get a working first version on your phone to show people and test. Changes are a text away.",
     },
   ],
+  // A lower-commitment path for anyone not ready to fill out the form (Kyle, 2026-10-17).
+  consult: {
+    line: "Not ready to write it all down?",
+    sub: "Talk it through first. 15 minutes, free, no pressure to build anything.",
+    button: "Book a free consultation",
+  },
   faqEyebrow: "Before you ask",
   faqHeadline: "The questions everyone has.",
   faqAside: "Something else on your mind? Put it in the form with your idea and we'll answer it in the plan.",
