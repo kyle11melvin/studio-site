@@ -27,14 +27,57 @@ const thumbs: Record<string, React.ComponentType<{ className?: string }>> = {
   edge: EdgeDeskScreen,
 };
 
-// Soft panel behind each gallery phone, a tint of that app's own colors.
-const tint: Record<string, string> = {
-  anvil: "radial-gradient(120% 90% at 50% 20%,#4a3426,#1b1512)",
-  huddle: "radial-gradient(120% 90% at 50% 20%,#2c3a63,#121a2e)",
-  edge: "radial-gradient(120% 90% at 50% 20%,#3b3a33,#141412)",
-};
-
 const icon = (id: string) => `/icons/${id}.webp`;
+
+// The bento below "More we've built". Colors are each app's own palette (from its repo).
+type Bento = {
+  id: string;
+  span: string;
+  tall?: boolean;
+  /** Narrow card: text on top, icon underneath, at every width. */
+  stack?: boolean;
+  phone?: string;
+  bg: string;
+  ink: string;
+  soft: string;
+  glow: string;
+  glowAt: React.CSSProperties;
+  border: string;
+  chipBg: string;
+  chipInk: string;
+};
+const bento: Bento[] = [
+  {
+    id: "anvil", span: "lg:row-span-2", tall: true, phone: "w-[min(300px,74vw)] -rotate-[4deg]",
+    bg: "radial-gradient(130% 80% at 50% 100%,#3a1d0c 0%,#15100c 55%,#0a0908 100%)",
+    ink: "#f3f3f1", soft: "rgba(243,243,241,0.72)", glow: "#ff6b1a", glowAt: { left: "15%", bottom: "-8%" },
+    border: "border-[#ff6b1a]/20", chipBg: "rgba(255,107,26,0.18)", chipInk: "#ffa033",
+  },
+  {
+    id: "huddle", span: "lg:col-span-2", phone: "w-[min(230px,60vw)] rotate-[5deg]",
+    bg: "linear-gradient(150deg,#16243c 0%,#0a1321 70%)",
+    ink: "#eef2f8", soft: "rgba(238,242,248,0.72)", glow: "#e8b95a", glowAt: { right: "-6%", top: "-30%" },
+    border: "border-[#e8b95a]/20", chipBg: "rgba(232,185,90,0.16)", chipInk: "#ffd98a",
+  },
+  {
+    id: "edge", span: "lg:col-span-2", phone: "w-[min(230px,60vw)] -rotate-[4deg]",
+    bg: "linear-gradient(150deg,#f4f2ed 0%,#e9e5da 100%)",
+    ink: "#111111", soft: "#3a3a3a", glow: "#8fd39b", glowAt: { right: "4%", bottom: "-40%" },
+    border: "border-[#cfccc3]", chipBg: "#111111", chipInk: "#f4f2ed",
+  },
+  {
+    id: "finance", span: "lg:col-span-1", stack: true,
+    bg: "linear-gradient(150deg,#0f4a32 0%,#0a2e21 70%)",
+    ink: "#f0f8f3", soft: "rgba(240,248,243,0.75)", glow: "#3bb07f", glowAt: { right: "-20%", top: "-20%" },
+    border: "border-[#3bb07f]/25", chipBg: "", chipInk: "",
+  },
+  {
+    id: "markup", span: "lg:col-span-2",
+    bg: "radial-gradient(120% 120% at 85% 40%,#15241c 0%,#0b0c0f 60%)",
+    ink: "#f3f1ea", soft: "rgba(243,241,234,0.7)", glow: "#3dbe7a", glowAt: { right: "2%", top: "-10%" },
+    border: "border-white/10", chipBg: "", chipInk: "",
+  },
+];
 
 const cards = [
   ...flagships.map((f) => ({ id: f.id, name: f.name, line: f.tagline })),
@@ -173,71 +216,84 @@ export function Work() {
       {/* Switchboard is the last flagship; its replay sits right under it. */}
       <SwitchboardReplay />
 
-      {/* 3. Compact gallery */}
-      <div className="mx-auto max-w-[1180px] px-4 pt-12 sm:px-6">
-        <h3 className="reveal mb-6 px-2 font-display text-[clamp(36px,4.5vw,56px)] leading-none sm:px-0">
+      {/* 3. "More we've built": a bento of brand-colored stages (Kyle, 2026-10-17: "you can do
+          better than this"). ANVIL runs tall on the left; The Huddle and Edge Desk sit beside it
+          with their phones rising from the corner; Finance and Markup get their icons lit on
+          their own colors. Each stage uses the app's real palette from its repo. */}
+      <div className="mx-auto max-w-[1180px] px-4 pt-14 sm:px-6">
+        <h3 className="reveal mb-7 px-2 font-display text-[clamp(36px,4.5vw,56px)] leading-none sm:px-0">
           {work.moreHeadline}
         </h3>
 
-        <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,300px),1fr))] gap-4 sm:gap-5">
-          {gallery.map((f, i) => {
-            const Thumb = thumbs[f.id];
+        <div className="grid gap-4 sm:gap-5 lg:grid-cols-3">
+          {bento.map((b) => {
+            const f = gallery.find((g) => g.id === b.id);
+            const m = more.find((x) => x.id === b.id);
+            const name = f?.name ?? m?.name ?? "";
+            const tagline = f?.tagline ?? m?.tagline ?? "";
+            const line = f?.headline ?? m?.body ?? "";
+            const Thumb = thumbs[b.id];
             return (
               <article
-                key={f.id}
-                id={f.id}
-                className={`reveal flex scroll-mt-4 flex-col overflow-hidden ${i % 2 ? frosted : daylight}`}
+                key={b.id}
+                id={b.id}
+                className={`reveal group relative isolate flex scroll-mt-4 overflow-hidden rounded-[32px] border shadow-[0_40px_80px_-40px_rgba(5,10,30,0.8)] ${b.span} ${b.border} ${
+                  b.tall ? "min-h-[520px] flex-col lg:min-h-[760px]" : b.stack ? "min-h-[300px] flex-col" : "min-h-[300px] flex-col sm:flex-row"
+                }`}
+                style={{ background: b.bg, color: b.ink }}
               >
-                <div
-                  className="relative flex h-[300px] justify-center overflow-hidden pt-8"
-                  style={{ background: tint[f.id] }}
-                >
-                  <Thumb className="w-[230px]" />
-                </div>
-                <div className="flex flex-col gap-2 p-6">
+                {/* soft brand glow */}
+                <span
+                  aria-hidden="true"
+                  className="pointer-events-none absolute -z-10 size-[420px] rounded-full blur-[90px]"
+                  style={{ background: b.glow, opacity: 0.45, ...b.glowAt }}
+                />
+                <div className={`relative z-10 flex flex-col gap-2.5 p-7 sm:p-8 ${b.tall || b.stack ? "" : "sm:w-[56%]"}`}>
                   <div className="flex flex-wrap items-center gap-2.5">
-                    <Image
-                      src={icon(f.id)}
-                      alt=""
-                      width={32}
-                      height={32}
-                      className="rounded-lg"
-                    />
-                    <h4 className="text-[22px] font-extrabold tracking-[-0.02em]">
-                      {f.name}
-                    </h4>
-                    <Status f={f} />
+                    <Image src={icon(b.id)} alt="" width={40} height={40} className="rounded-[11px] shadow-[0_6px_16px_-6px_rgba(0,0,0,0.5)]" />
+                    <h4 className="text-[22px] font-extrabold tracking-[-0.02em]">{name}</h4>
+                    {f && (
+                      <span
+                        className="rounded-full px-2.5 py-0.5 text-[13px] font-semibold"
+                        style={{ background: b.chipBg, color: b.chipInk }}
+                      >
+                        {f.status}
+                      </span>
+                    )}
                   </div>
-                  <p className="font-display text-[26px] leading-[1.1]">
-                    {f.tagline}.
+                  <p className={`font-display leading-[1.04] ${b.tall ? "text-[clamp(34px,3.4vw,46px)]" : "text-[clamp(28px,2.6vw,34px)]"}`}>
+                    {tagline}.
                   </p>
-                  <p className="text-ink-soft">{f.headline}</p>
+                  <p className="max-w-[36ch] text-[16px] leading-relaxed" style={{ color: b.soft }}>
+                    {line}
+                  </p>
                 </div>
+
+                {Thumb ? (
+                  <div
+                    className={`pointer-events-none relative flex flex-1 justify-center transition-transform duration-500 group-hover:-translate-y-2 ${
+                      b.tall ? "items-end px-8" : "items-end sm:justify-end sm:pr-6"
+                    }`}
+                  >
+                    <div className={`${b.phone} translate-y-[18%]`}>
+                      <Thumb className="w-full" />
+                    </div>
+                  </div>
+                ) : (
+                  <div className={`relative flex flex-1 items-center justify-center p-8 pt-2 ${b.stack ? "" : "sm:justify-end sm:pr-12"}`}>
+                    <Image
+                      src={icon(b.id)}
+                      alt=""
+                      width={b.stack ? 104 : 132}
+                      height={b.stack ? 104 : 132}
+                      className="rounded-[30px] shadow-[0_30px_60px_-20px_rgba(0,0,0,0.7)] transition-transform duration-500 group-hover:-translate-y-1.5 group-hover:rotate-[-3deg]"
+                      style={{ boxShadow: `0 30px 60px -20px rgba(0,0,0,0.7), 0 0 60px -6px ${b.glow}` }}
+                    />
+                  </div>
+                )}
               </article>
             );
           })}
-        </div>
-
-        <div className="mt-4 grid grid-cols-[repeat(auto-fit,minmax(min(100%,300px),1fr))] gap-4 sm:mt-5 sm:gap-5">
-          {more.map((m, i) => (
-            <div
-              key={m.id}
-              id={m.id}
-              className={`reveal flex scroll-mt-4 gap-4 p-6 ${i % 2 ? daylight : frosted}`}
-            >
-              <Image
-                src={icon(m.id)}
-                alt=""
-                width={48}
-                height={48}
-                className="h-12 w-12 shrink-0 rounded-xl"
-              />
-              <div>
-                <h4 className="mb-1.5 text-[22px] font-bold">{m.name}</h4>
-                <p className="text-ink-soft">{m.body}</p>
-              </div>
-            </div>
-          ))}
         </div>
       </div>
     </section>
