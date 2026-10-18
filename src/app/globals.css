@@ -81,8 +81,29 @@ body {
     #d9d3e8 100%
   );
 }
+/* Night behind the work: the dawn the hero ends on falls to deep blue over the first ~220px
+   (before "The work" heading), holds dark, and lifts slightly at the bottom into the process
+   band. */
+.sky-night {
+  background: linear-gradient(
+    180deg,
+    var(--color-dawn) 0px,
+    #b9b2d6 70px,
+    var(--color-sky-2) 150px,
+    var(--color-sky-1) 230px,
+    #1c2949 45%,
+    #1a2644 80%,
+    #24375f 100%
+  );
+}
+/* Inside a dark band, the text tokens flip to light so components keep using text-ink etc. */
+.on-dark {
+  --color-ink: #f5f4f1;
+  --color-ink-soft: rgba(245, 244, 241, 0.82);
+  --color-muted: rgba(245, 244, 241, 0.62);
+}
 .sky-dusk {
-  background: linear-gradient(180deg, #d9d3e8 0%, #7f86bb 6%, var(--color-sky-2) 26%, var(--color-sky-1) 100%);
+  background: linear-gradient(180deg, #24375f 0%, var(--color-sky-2) 30%, var(--color-sky-1) 100%);
 }
 .sky-night-to-dawn {
   background: linear-gradient(

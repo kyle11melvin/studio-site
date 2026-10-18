@@ -15,7 +15,7 @@ page must stay prerendered (`○ /` in the build output). No backend, no databas
 - `src/content/site.ts` — **all copy.** Change words there, never in components.
 - `src/app/globals.css` — **design tokens** (`@theme`). A redesign starts here. The page is one
   sky from top to bottom (Kyle loved the hero, disliked flat gray/black below it): dawn hero,
-  `.sky-day` behind the work (apps sit on frosted white cards), `.sky-dusk` for the process
+  `.sky-night` + `.on-dark` behind the work (dark night band, apps on dark glass cards; Kyle 2026-10-17 inverted it from the light hero), `.sky-dusk` for the process
   band, `.sky-night-to-dawn` for contact. Don't reintroduce flat gray or black bands.
 - `src/components/Work.tsx` — the work section (Kyle picked it 2026-10-17, "Option 3"): a swipeable
   row of app icons, each a plain `#id` link that jumps to that app below; then three **flagship**

@@ -134,8 +134,9 @@ export default function Home() {
       </div>
 
       <main>
-        <div className="sky-day relative isolate">
-          <SkyWisps set="day" />
+        {/* The app names sit on the hero's dawn; then night falls behind the work (Kyle,
+            2026-10-17: invert the scheme from the hero to the next section). */}
+        <div className="bg-dawn">
           <section
             aria-label={hero.shippedLabel}
             className="mx-auto flex max-w-[1240px] flex-wrap items-center justify-center gap-x-10 gap-y-3 px-6 pb-6 pt-10"
@@ -149,7 +150,9 @@ export default function Home() {
               </span>
             ))}
           </section>
-
+        </div>
+        <div className="sky-night on-dark relative isolate text-ink">
+          <SkyWisps set="dusk" />
           <Work />
         </div>
 

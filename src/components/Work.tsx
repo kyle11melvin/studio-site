@@ -28,9 +28,9 @@ const thumbs: Record<string, React.ComponentType<{ className?: string }>> = {
 
 // Soft panel behind each gallery phone, a tint of that app's own colors.
 const tint: Record<string, string> = {
-  anvil: "linear-gradient(160deg,#ece2d8,#d9c9b9)",
-  huddle: "linear-gradient(160deg,#dde2ee,#c4cbe0)",
-  edge: "linear-gradient(160deg,#f0ede4,#ddd8c9)",
+  anvil: "radial-gradient(120% 90% at 50% 20%,#4a3426,#1b1512)",
+  huddle: "radial-gradient(120% 90% at 50% 20%,#2c3a63,#121a2e)",
+  edge: "radial-gradient(120% 90% at 50% 20%,#3b3a33,#141412)",
 };
 
 const icon = (id: string) => `/icons/${id}.webp`;
@@ -42,13 +42,13 @@ const cards = [
 ];
 
 const frosted =
-  "rounded-[32px] border border-white/80 bg-white/55 shadow-[0_30px_70px_-40px_rgba(60,64,120,0.45)] backdrop-blur-md";
+  "rounded-[32px] border border-white/12 bg-white/[0.06] shadow-[0_40px_80px_-40px_rgba(5,10,30,0.7)] backdrop-blur-md";
 
 function Status({ f }: { f: Featured }) {
   return (
     <span
       className={`rounded-full px-2.5 py-1 text-sm font-semibold ${
-        f.live ? "bg-live-bg text-live-ink" : "bg-[#e4e7ec] text-ink-soft"
+        f.live ? "bg-live-bg text-live-ink" : "bg-white/15 text-ink-soft"
       }`}
     >
       {f.status}
@@ -61,7 +61,7 @@ export function Work() {
     <section
       id="work"
       aria-labelledby="work-title"
-      className="scroll-mt-6 pb-32 pt-16"
+      className="scroll-mt-6 pb-32 pt-[clamp(150px,16vw,220px)]"
     >
       <div className="mx-auto flex max-w-[1180px] flex-wrap items-end justify-between gap-x-8 gap-y-3 px-6 pb-7">
         <div>
@@ -85,7 +85,7 @@ export function Work() {
             <li key={c.id} className="snap-start">
               <a
                 href={`#${c.id}`}
-                className="flex w-[148px] flex-col gap-2.5 rounded-[22px] border border-white/80 bg-white/70 p-4 shadow-[0_14px_34px_-20px_rgba(60,64,120,0.45)] backdrop-blur-md transition-transform hover:-translate-y-0.5"
+                className="flex w-[148px] flex-col gap-2.5 rounded-[22px] border border-white/12 bg-white/[0.07] p-4 shadow-[0_18px_40px_-22px_rgba(5,10,30,0.8)] backdrop-blur-md transition hover:-translate-y-0.5 hover:bg-white/[0.12]"
               >
                 <Image
                   src={icon(c.id)}
@@ -154,7 +154,7 @@ export function Work() {
               {f.href && (
                 <a
                   href={f.href}
-                  className="font-bold text-accent underline underline-offset-4"
+                  className="font-bold text-sky-4 underline underline-offset-4"
                 >
                   Visit the live site
                 </a>
