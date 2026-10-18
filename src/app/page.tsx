@@ -27,7 +27,7 @@ export default function Home() {
   return (
     <>
       <div className="relative overflow-hidden bg-dawn">
-        <div className="sky-top pb-20">
+        <div className="sky-top pb-2">
           <header className="relative mx-auto flex max-w-[1240px] flex-wrap items-center justify-between gap-4 px-6 py-[22px]">
             <a
               href="#top"
@@ -63,12 +63,12 @@ export default function Home() {
 
           <section
             id="top"
-            className="relative mx-auto flex max-w-[1000px] flex-col items-center gap-7 px-6 pt-[88px] text-center"
+            className="relative mx-auto flex max-w-[860px] flex-col items-center gap-5 px-6 pt-[48px] text-center"
           >
-            <h1 className="font-display text-[clamp(52px,8vw,112px)] leading-[0.98] tracking-[-0.02em] text-white [text-shadow:0_2px_30px_rgba(30,40,80,0.18)]">
+            <h1 className="font-display text-balance text-[clamp(40px,5.2vw,72px)] leading-[1.02] tracking-[-0.02em] text-white [text-shadow:0_2px_30px_rgba(30,40,80,0.18)]">
               {hero.headline}
             </h1>
-            <p className="max-w-[46ch] text-xl text-white/90">{hero.intro}</p>
+            <p className="max-w-[46ch] text-lg text-white/90">{hero.intro}</p>
             <a
               href="#contact"
               className={`${btn} bg-ink text-white hover:bg-black`}
