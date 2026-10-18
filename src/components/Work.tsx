@@ -114,7 +114,7 @@ export function Work() {
         >
           <article
             id={f.id}
-            className={`flex scroll-mt-4 flex-wrap items-center gap-x-14 gap-y-8 p-[clamp(12px,3vw,36px)] ${frosted} ${
+            className={`reveal flex scroll-mt-4 flex-wrap items-center gap-x-14 gap-y-8 p-[clamp(12px,3vw,36px)] ${frosted} ${
               i % 2 ? "flex-row-reverse" : ""
             }`}
           >
@@ -166,7 +166,7 @@ export function Work() {
 
       {/* 3. Compact gallery */}
       <div className="mx-auto max-w-[1180px] px-4 pt-12 sm:px-6">
-        <h3 className="mb-6 px-2 font-display text-[clamp(36px,4.5vw,56px)] leading-none sm:px-0">
+        <h3 className="reveal mb-6 px-2 font-display text-[clamp(36px,4.5vw,56px)] leading-none sm:px-0">
           {work.moreHeadline}
         </h3>
 
@@ -177,7 +177,7 @@ export function Work() {
               <article
                 key={f.id}
                 id={f.id}
-                className={`flex scroll-mt-4 flex-col overflow-hidden ${frosted}`}
+                className={`reveal flex scroll-mt-4 flex-col overflow-hidden ${frosted}`}
               >
                 <div
                   className="relative flex h-[300px] justify-center overflow-hidden pt-8"
@@ -214,7 +214,7 @@ export function Work() {
             <div
               key={m.id}
               id={m.id}
-              className={`flex scroll-mt-4 gap-4 p-6 ${frosted}`}
+              className={`reveal flex scroll-mt-4 gap-4 p-6 ${frosted}`}
             >
               <Image
                 src={icon(m.id)}

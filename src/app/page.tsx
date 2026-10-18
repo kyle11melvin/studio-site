@@ -156,14 +156,14 @@ export default function Home() {
         <section id="process" className="sky-dusk relative isolate scroll-mt-6 text-white">
           <SkyWisps set="dusk" />
           <div className="mx-auto max-w-[1180px] px-6 pb-28 pt-40">
-            <h2 className="mb-12 max-w-[18ch] font-display text-[clamp(40px,5.5vw,72px)] leading-none tracking-[-0.01em] [text-shadow:0_2px_30px_rgba(30,40,80,0.25)]">
+            <h2 className="reveal mb-12 max-w-[18ch] font-display text-[clamp(40px,5.5vw,72px)] leading-none tracking-[-0.01em] [text-shadow:0_2px_30px_rgba(30,40,80,0.25)]">
               {process.headline}
             </h2>
             <ol className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,280px),1fr))] gap-4 sm:gap-5">
               {process.steps.map((s, i) => (
                 <li
                   key={s.title}
-                  className="flex flex-col gap-3 rounded-[28px] border border-white/20 bg-white/10 p-7 backdrop-blur-md"
+                  className="reveal flex flex-col gap-3 rounded-[28px] border border-white/20 bg-white/10 p-7 backdrop-blur-md"
                 >
                   <span
                     aria-hidden="true"
@@ -179,14 +179,14 @@ export default function Home() {
 
             {/* FAQ: the worries a small-business owner has before reaching out. Native
                 <details>, so it opens and closes with no JavaScript. */}
-            <h3 className="mb-6 mt-24 font-display text-[clamp(32px,4vw,52px)] leading-none">
+            <h3 className="reveal mb-6 mt-24 font-display text-[clamp(32px,4vw,52px)] leading-none">
               {process.faqHeadline}
             </h3>
             <div className="flex max-w-[820px] flex-col gap-3">
               {process.faq.map((f) => (
                 <details
                   key={f.q}
-                  className="group rounded-[22px] border border-white/20 bg-white/10 px-6 py-5 backdrop-blur-md"
+                  className="reveal group rounded-[22px] border border-white/20 bg-white/10 px-6 py-5 backdrop-blur-md"
                 >
                   <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-[19px] font-bold [&::-webkit-details-marker]:hidden">
                     {f.q}
@@ -204,7 +204,7 @@ export default function Home() {
         <section id="contact" className="sky-night-to-dawn relative isolate scroll-mt-6">
           <SkyWisps set="night" />
           <div className="mx-auto flex max-w-[1000px] flex-col items-center gap-8 px-6 py-32 text-center">
-            <h2 className="max-w-[22ch] font-display text-[clamp(40px,5.5vw,76px)] leading-[1.02] text-white [text-shadow:0_2px_30px_rgba(30,40,80,0.18)]">
+            <h2 className="reveal max-w-[22ch] font-display text-[clamp(40px,5.5vw,76px)] leading-[1.02] text-white [text-shadow:0_2px_30px_rgba(30,40,80,0.18)]">
               {contact.headline}
             </h2>
             <ProjectForm />

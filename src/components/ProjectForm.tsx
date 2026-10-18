@@ -20,7 +20,7 @@ export function ProjectForm() {
       action={action}
       method="POST"
       encType={mailFallback ? "text/plain" : undefined}
-      className="flex w-full max-w-[720px] flex-col gap-5 rounded-[32px] border border-white/60 bg-white/55 p-6 text-left shadow-[0_30px_70px_-40px_rgba(60,64,120,0.5)] backdrop-blur-md sm:p-9"
+      className="reveal flex w-full max-w-[720px] flex-col gap-5 rounded-[32px] border border-white/60 bg-white/55 p-6 text-left shadow-[0_30px_70px_-40px_rgba(60,64,120,0.5)] backdrop-blur-md sm:p-9"
     >
       <input type="hidden" name="_subject" value={projectForm.subject} />
 
