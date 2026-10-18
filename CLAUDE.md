@@ -19,7 +19,7 @@ page must stay prerendered (`○ /` in the build output). No backend, no databas
   band, `.sky-night-to-dawn` for contact. Don't reintroduce flat gray or black bands.
 - `src/components/Work.tsx` — the work section (Kyle picked it 2026-10-17, "Option 3"): a swipeable
   row of app icons, each a plain `#id` link that jumps to that app below; then three **flagship**
-  case studies (Switchboard, Bird Dog, DefendItOwnIt) on dark lit stages with a second screen behind;
+  case studies (Bird Dog, DefendItOwnIt, Switchboard; the hero centerpiece is the live DefendItOwnIt site, Kyle 2026-10-17) on dark lit stages with a second screen behind;
   then a compact gallery (ANVIL, The Huddle, Edge Desk with phone thumbnails; Finance and Markup
   icon-only). Icons live in `public/icons/<id>.webp`. No JavaScript: it stays a static page.
 - `Device` in `mocks.tsx` is the phone frame: metal edge, side buttons, Dynamic Island, a status bar

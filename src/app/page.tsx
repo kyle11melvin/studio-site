@@ -7,7 +7,7 @@ import { Spark } from "@/components/Spark";
 import {
   AnvilScreen,
   BirdDogScreen,
-  SwitchboardScreen,
+  DioiHeroScreen,
 } from "@/components/mocks";
 import { Work } from "@/components/Work";
 import { Wordmark } from "@/components/Wordmark";
@@ -119,10 +119,10 @@ export default function Home() {
                 <AnvilScreen />
               </div>
             </div>
-            {/* On a phone the hero ends on the spark line; the apps show up in the work
-                section below, so the Switchboard screen only rises out of the clouds on md+. */}
+            {/* The centerpiece is a live website (DefendItOwnIt); Switchboard stays in the
+                top three of the work section. */}
             <div className="relative z-10 hidden min-w-0 max-w-[620px] flex-1 justify-center md:flex">
-              <SwitchboardScreen />
+              <DioiHeroScreen />
             </div>
             <div className="hidden h-[480px] w-[210px] shrink-0 rotate-[4deg] pt-8 md:block">
               <div className="w-[300px] origin-top-left scale-[0.7]">

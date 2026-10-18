@@ -13,7 +13,8 @@ import {
 //   3. a compact gallery for the rest: phone-thumbnail cards, then icon-only cards
 // Static: no JavaScript, links are plain #anchors.
 
-const FLAGSHIPS = ["switchboard", "birddog", "dioi"] as const;
+// Order: Bird Dog leads, then the live DefendItOwnIt site, then Switchboard (Kyle, 2026-10-17).
+const FLAGSHIPS = ["birddog", "dioi", "switchboard"] as const;
 type FlagshipId = (typeof FLAGSHIPS)[number];
 
 const flagships = FLAGSHIPS.map((id) => featured.find((f) => f.id === id)!);

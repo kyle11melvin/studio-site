@@ -175,6 +175,19 @@ const ALT = {
 
 // ----- Single screens (hero and compact gallery) -----
 
+// The hero centerpiece (Kyle, 2026-10-17: Switchboard isn't the "boom" shot). A live website,
+// shown in a browser window cropped to its top, so a visitor sees a real site we shipped.
+export function DioiHeroScreen() {
+  return (
+    <BrowserWindow
+      src="/screens/dioi.webp"
+      label="defenditownit.com"
+      alt="The DefendItOwnIt homepage"
+      aspect="aspect-[900/640]"
+    />
+  );
+}
+
 // The desktop window is unreadable at phone width, so phones get the phone-size screenshot.
 export function SwitchboardScreen() {
   return (
