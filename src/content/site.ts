@@ -130,7 +130,7 @@ export const more = [
 
 export const work = {
   headline: "The work",
-  intro: "Eight things I built and use. Tap one to jump to it, or keep scrolling for the full story on each.",
+  intro: "Eight things I've built. Most of them run every day. Tap one to jump to it, or keep scrolling for the story behind each.",
   swipeHint: "Swipe for all eight",
   moreHeadline: "More I've built",
 };
@@ -159,4 +159,15 @@ export const contact = {
   headline: "Tell me what's slowing you down, and I'll tell you whether I can build the fix.",
   button: "Email Kyle",
   note: "A plan and a price range within one business day.",
+};
+
+// The person behind the work, shown in the contact section. Add `photo` (a path under
+// public/) once Kyle sends one; the card lays out without it.
+export const about = {
+  name: "Kyle Melvin",
+  photo: "" as string,
+  lines: [
+    "I've spent more than ten years as a loan officer in Orange County, where a missed follow-up costs real money. I started building my own tools to fix that.",
+    "Now I build them for other businesses. You work with me directly, from the first call to the last fix.",
+  ],
 };

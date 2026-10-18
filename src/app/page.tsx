@@ -6,7 +6,7 @@ import {
   SwitchboardScreen,
 } from "@/components/mocks";
 import { Work } from "@/components/Work";
-import { contact, hero, process, site } from "@/content/site";
+import { about, contact, hero, process, site } from "@/content/site";
 
 const btn =
   "inline-flex min-h-[54px] items-center rounded-full px-7 font-semibold no-underline";
@@ -151,9 +151,6 @@ export default function Home() {
                 </li>
               ))}
             </ol>
-            <p className="mt-10 max-w-[60ch] text-lg text-white/90">
-              {process.ownership}
-            </p>
           </div>
         </section>
 
@@ -169,6 +166,30 @@ export default function Home() {
               {contact.button}
             </a>
             <p className="text-ink">{contact.note}</p>
+
+            {/* The person behind the work, so it reads as reaching Kyle, not filing a ticket. */}
+            <div className="mt-10 flex w-full max-w-[720px] flex-col items-center gap-5 rounded-[32px] border border-white/60 bg-white/45 p-7 text-left shadow-[0_30px_70px_-40px_rgba(60,64,120,0.5)] backdrop-blur-md sm:flex-row sm:items-start sm:gap-7 sm:p-9">
+              {about.photo && (
+                <Image
+                  src={about.photo}
+                  alt={about.name}
+                  width={112}
+                  height={112}
+                  className="size-28 shrink-0 rounded-full object-cover"
+                />
+              )}
+              <div className="flex flex-col gap-3">
+                <p className="font-display text-[30px] leading-none">
+                  {about.name}
+                </p>
+                {about.lines.map((l) => (
+                  <p key={l} className="text-ink-soft">
+                    {l}
+                  </p>
+                ))}
+                <p className="font-semibold text-ink">{process.ownership}</p>
+              </div>
+            </div>
           </div>
         </section>
       </main>

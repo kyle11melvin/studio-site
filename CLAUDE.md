@@ -18,9 +18,14 @@ page must stay prerendered (`○ /` in the build output). No backend, no databas
   `.sky-day` behind the work (apps sit on frosted white cards), `.sky-dusk` for the process
   band, `.sky-night-to-dawn` for contact. Don't reintroduce flat gray or black bands.
 - `src/components/Work.tsx` — the work section (Kyle picked it 2026-10-17, "Option 3"): a swipeable
-  row of app icons, each a plain `#id` link that jumps to that app's band below; then one band per
-  featured app (screen + story, sides alternating); then Finance and Markup. Icons live in
-  `public/icons/<id>.webp`, one per app id. No JavaScript: it stays a static page.
+  row of app icons, each a plain `#id` link that jumps to that app below; then three **flagship**
+  case studies (Switchboard, Bird Dog, DefendItOwnIt) on dark lit stages with a second screen behind;
+  then a compact gallery (ANVIL, The Huddle, Edge Desk with phone thumbnails; Finance and Markup
+  icon-only). Icons live in `public/icons/<id>.webp`. No JavaScript: it stays a static page.
+- `Device` in `mocks.tsx` is the phone frame: metal edge, side buttons, Dynamic Island, a status bar
+  in each app's own color. Kyle said the old flat black frame didn't read as a phone; keep this one.
+- The contact section carries a short personal intro (`about` in `site.ts`). Add `about.photo`
+  when Kyle sends a photo.
 - `src/components/mocks.tsx` — the app screens. Real screenshots live in `public/screens/`,
   taken by running each app locally from its own repo (Switchboard with its fake-AI test
   harness, Bird Dog with an invented demo book, ANVIL with its test workout, The Huddle with
