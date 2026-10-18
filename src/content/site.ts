@@ -29,7 +29,8 @@ export const hero = {
   sparkLine: "Every idea starts as a spark. We close the gap.",
   cta: "Tell us your idea",
   ctaShort: "Share your idea",
-  shippedLabel: "Shipped and in daily use",
+  // Screen-reader name for the row of app names under the hero (no visible label: Kyle, 2026-10-17).
+  shippedLabel: "Apps we've built",
 };
 
 export type FeaturedId = "switchboard" | "dioi" | "birddog" | "anvil" | "huddle" | "edge";

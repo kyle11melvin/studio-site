@@ -30,7 +30,7 @@ export default function Home() {
   return (
     <>
       <div className="relative overflow-hidden bg-dawn">
-        <div className="sky-top relative pb-2">
+        <div className="sky-top relative isolate pb-2">
           <SkyWisps />
           <header className="relative mx-auto flex max-w-[1240px] flex-wrap items-center justify-between gap-4 px-6 py-[22px]">
             <a
@@ -109,7 +109,9 @@ export default function Home() {
         </div>
 
         {/* Cloud bank the apps rise out of. Decorative; the apps are explained in #work. */}
-        <div aria-hidden="true" className="relative -mt-[clamp(40px,6vw,90px)]">
+        {/* Cloud bank with the app screens rising out of it: md+ only. On a phone the screens are
+            hidden, so the bank was just an empty white band under the spark line. */}
+        <div aria-hidden="true" className="relative -mt-[clamp(40px,6vw,90px)] hidden md:block">
           <Clouds />
           <div className="relative mx-auto flex max-w-[1100px] items-start justify-center gap-6 px-6 pb-6 pt-6 md:pb-16">
             <div className="hidden h-[480px] w-[210px] shrink-0 -rotate-[4deg] pt-16 md:block">
@@ -132,12 +134,12 @@ export default function Home() {
       </div>
 
       <main>
-        <div className="sky-day">
+        <div className="sky-day relative isolate">
+          <SkyWisps set="day" />
           <section
             aria-label={hero.shippedLabel}
             className="mx-auto flex max-w-[1240px] flex-wrap items-center justify-center gap-x-10 gap-y-3 px-6 pb-6 pt-10"
           >
-            <span className="text-[15px] text-muted">{hero.shippedLabel}</span>
             {shipped.map((s) => (
               <span
                 key={s.name}
@@ -151,7 +153,8 @@ export default function Home() {
           <Work />
         </div>
 
-        <section id="process" className="sky-dusk scroll-mt-6 text-white">
+        <section id="process" className="sky-dusk relative isolate scroll-mt-6 text-white">
+          <SkyWisps set="dusk" />
           <div className="mx-auto max-w-[1180px] px-6 pb-28 pt-40">
             <h2 className="mb-12 max-w-[18ch] font-display text-[clamp(40px,5.5vw,72px)] leading-none tracking-[-0.01em] [text-shadow:0_2px_30px_rgba(30,40,80,0.25)]">
               {process.headline}
@@ -198,7 +201,8 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="contact" className="sky-night-to-dawn scroll-mt-6">
+        <section id="contact" className="sky-night-to-dawn relative isolate scroll-mt-6">
+          <SkyWisps set="night" />
           <div className="mx-auto flex max-w-[1000px] flex-col items-center gap-8 px-6 py-32 text-center">
             <h2 className="max-w-[22ch] font-display text-[clamp(40px,5.5vw,76px)] leading-[1.02] text-white [text-shadow:0_2px_30px_rgba(30,40,80,0.18)]">
               {contact.headline}
