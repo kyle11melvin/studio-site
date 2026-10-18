@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Clouds } from "@/components/Clouds";
 import { FingerClouds } from "@/components/FingerClouds";
 import { ProjectForm } from "@/components/ProjectForm";
+import { SkyWisps } from "@/components/SkyWisps";
 import { Spark } from "@/components/Spark";
 import {
   AnvilScreen,
@@ -29,7 +30,8 @@ export default function Home() {
   return (
     <>
       <div className="relative overflow-hidden bg-dawn">
-        <div className="sky-top pb-2">
+        <div className="sky-top relative pb-2">
+          <SkyWisps />
           <header className="relative mx-auto flex max-w-[1240px] flex-wrap items-center justify-between gap-4 px-6 py-[22px]">
             <a
               href="#top"
