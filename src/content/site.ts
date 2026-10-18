@@ -31,10 +31,8 @@ export const hero = {
   headline: "Have an idea? We'll build it.",
   // Sits just under the fingertips: ties the name to the picture.
   sparkLine: "Every idea starts as a spark. We close the gap.",
-  cta: "Tell us your idea",
-  ctaShort: "Share your idea",
-  // Ownership up front (Kyle, 2026-10-17): it was buried in FAQ #7.
-  trust: "No commitment to build. You own everything we build. NDA on request.",
+  cta: "What do you want to create?",
+  ctaShort: "Let's create it",
   // Screen-reader name for the row of app names under the hero (no visible label: Kyle, 2026-10-17).
   shippedLabel: "Apps we've built",
 };

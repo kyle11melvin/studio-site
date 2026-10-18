@@ -71,10 +71,7 @@ export default function Home() {
             id="top"
             className="relative mx-auto flex max-w-[860px] flex-col items-center gap-5 px-6 pt-[48px] text-center"
           >
-            <p className="text-[13px] font-semibold uppercase tracking-[0.24em] text-white/80 sm:text-[14px]">
-              {hero.eyebrow}
-            </p>
-            <h1 className="-mt-1 font-display text-balance text-[clamp(40px,5.2vw,72px)] leading-[1.02] tracking-[-0.02em] text-white [text-shadow:0_2px_30px_rgba(30,40,80,0.18)]">
+            <h1 className="font-display text-balance text-[clamp(40px,5.2vw,72px)] leading-[1.02] tracking-[-0.02em] text-white [text-shadow:0_2px_30px_rgba(30,40,80,0.18)]">
               {hero.headline}
             </h1>
             <a
@@ -83,7 +80,10 @@ export default function Home() {
             >
               {hero.cta}
             </a>
-            <p className="-mt-1 text-[15px] text-white/80">{hero.trust}</p>
+            {/* The audience line moved here from above the headline (Kyle, 2026-10-18). */}
+            <p className="-mt-1 text-[13px] font-semibold uppercase tracking-[0.24em] text-white/80 sm:text-[14px]">
+              {hero.eyebrow}
+            </p>
           </section>
         </div>
 
