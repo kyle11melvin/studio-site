@@ -257,6 +257,15 @@ export default function Home() {
             <h2 className="reveal max-w-[22ch] font-display text-[clamp(40px,5.5vw,76px)] leading-[1.02] text-white [text-shadow:0_2px_30px_rgba(30,40,80,0.18)]">
               {contact.headline}
             </h2>
+            {/* What happens after you send it (from the Switchboard review, 2026-10-17). */}
+            <ul className="reveal -mt-2 flex flex-wrap justify-center gap-x-6 gap-y-2 text-[16px] text-white/90">
+              {projectForm.next.map((n) => (
+                <li key={n} className="flex items-center gap-2">
+                  <span aria-hidden="true" className="text-sky-4">&#10003;</span>
+                  {n}
+                </li>
+              ))}
+            </ul>
             {/* Shown only when FormSubmit sends the visitor back to /#sent. */}
             <div id="sent" className="sent-note hidden w-full max-w-[720px] scroll-mt-24 rounded-[28px] border border-live-ink/30 bg-live-bg p-6 text-left text-live-ink">
               <p className="font-display text-[28px] leading-tight">{projectForm.thanksTitle}</p>
@@ -268,14 +277,15 @@ export default function Home() {
                 site.ts has a booking link or number. */}
             <p className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-ink">
               <span>{contact.otherWays}</span>
+              <a
+                href={site.bookingUrl || `mailto:${site.email}?subject=${encodeURIComponent("Free consultation")}`}
+                className="font-semibold underline underline-offset-4"
+              >
+                {contact.talkFirst}
+              </a>
               <a href={`mailto:${site.email}`} className="font-semibold underline underline-offset-4">
                 {contact.button}
               </a>
-              {site.bookingUrl && (
-                <a href={site.bookingUrl} className="font-semibold underline underline-offset-4">
-                  {contact.bookButton}
-                </a>
-              )}
               {site.phone && (
                 <a href={`sms:${site.phone}`} className="font-semibold underline underline-offset-4">
                   {contact.textButton}
@@ -285,6 +295,15 @@ export default function Home() {
           </div>
         </section>
       </main>
+
+      {/* Phones only: a "Tell us your idea" button that stays at the bottom of the screen
+          (Kyle, 2026-10-17). It hides itself once the contact section is on screen. */}
+      <a
+        href="#contact"
+        className="sticky-cta fixed inset-x-4 bottom-[max(16px,env(safe-area-inset-bottom))] z-50 flex min-h-[54px] items-center justify-center rounded-full bg-ink text-[17px] font-semibold text-white no-underline shadow-[0_18px_40px_-12px_rgba(5,10,30,0.7)] sm:hidden"
+      >
+        {contact.sticky}
+      </a>
 
       <div className="bg-sky-5">
         <footer className="mx-auto flex max-w-[1240px] flex-col items-center gap-8 px-6 pb-14 pt-10 text-center text-[15px] text-ink-soft sm:flex-row sm:justify-between sm:text-left">

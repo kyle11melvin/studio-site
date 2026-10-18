@@ -248,3 +248,45 @@ body {
 .sent-note:target {
   display: block;
 }
+
+/* Phone sticky CTA: hidden on the first screen (the hero has its own button) and once the
+   form is in view. Scroll-driven, so no JavaScript; browsers without support just show it. */
+@supports (animation-timeline: scroll()) {
+  body {
+    timeline-scope: --contact;
+  }
+  #contact {
+    view-timeline: --contact;
+  }
+  .sticky-cta {
+    animation:
+      sticky-cta-show linear both,
+      sticky-cta-hide linear both;
+    animation-timeline: scroll(root), --contact;
+    animation-range:
+      0 90vh,
+      entry 0% entry 25%;
+  }
+}
+@keyframes sticky-cta-hide {
+  to {
+    opacity: 0;
+    transform: translateY(24px);
+    pointer-events: none;
+  }
+}
+@keyframes sticky-cta-show {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+    pointer-events: none;
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+body:has(#contact:target) .sticky-cta,
+body:has(#sent:target) .sticky-cta {
+  display: none;
+}

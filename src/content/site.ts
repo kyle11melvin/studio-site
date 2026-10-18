@@ -34,7 +34,7 @@ export const hero = {
   cta: "Tell us your idea",
   ctaShort: "Share your idea",
   // Ownership up front (Kyle, 2026-10-17): it was buried in FAQ #7.
-  trust: "You own everything we build. NDA on request.",
+  trust: "No commitment to build. You own everything we build. NDA on request.",
   // Screen-reader name for the row of app names under the hero (no visible label: Kyle, 2026-10-17).
   shippedLabel: "Apps we've built",
 };
@@ -273,6 +273,10 @@ export const process = {
       a: "Yes, we'll help you get it there. Apple and Google review every app before it goes live, so the plan builds in that step.",
     },
     {
+      q: "How does it go live, and who keeps it running?",
+      a: "We set up the hosting and launch it for you, and help you through the App Store if it's an app. You get every login and a short guide to how it works. After launch, ongoing support is there if you want it, quoted with your plan.",
+    },
+    {
       q: "What happens after it's built?",
       a: "You own all of it: the code, the domain and the accounts. There's no monthly fee to us, and any developer can pick it up from there.",
     },
@@ -284,7 +288,9 @@ export const contact = {
   button: "Email",
   bookButton: "Book a 15-minute call",
   textButton: "Text",
-  otherWays: "Rather talk first?",
+  otherWays: "Rather talk it through first?",
+  talkFirst: "Book a free 15-minute call",
+  sticky: "Tell us your idea",
 };
 
 // The project form in the contact section: the site's main call to action.
@@ -298,7 +304,9 @@ export const projectForm = {
   kindLabel: "What do you want to build? Pick any that fit.",
   kinds: ["A website", "An app", "Both", "Not sure yet"],
   problem: "What's your idea?",
-  problemHint: "A sentence or a page, rough is fine. Who is it for, and what should it do?",
+  problemHint: 'Plain English is perfect. Like "an app where neighbors book each other to walk their dogs" or "a page where my clients upload documents without making an account."',
+  // Shown above the form: what happens after you send it.
+  next: ["A written plan and a quote", "No commitment to build", "You own everything we build"],
   more: "Add more detail (optional): wishlist, examples, timeline",
   wishlist: "Your wishlist",
   wishlistHint: "Everything you'd want it to do, big or small.",
