@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Clouds } from "@/components/Clouds";
+import { ProjectForm } from "@/components/ProjectForm";
 import { Spark } from "@/components/Spark";
 import {
   AnvilScreen,
@@ -56,7 +57,8 @@ export default function Home() {
                 href="#contact"
                 className="ml-2 rounded-full bg-white px-5 py-3 font-semibold text-ink"
               >
-                Start a project
+                <span className="sm:hidden">{hero.ctaShort}</span>
+                <span className="hidden sm:inline">{hero.cta}</span>
               </a>
             </nav>
           </header>
@@ -68,7 +70,6 @@ export default function Home() {
             <h1 className="font-display text-balance text-[clamp(40px,5.2vw,72px)] leading-[1.02] tracking-[-0.02em] text-white [text-shadow:0_2px_30px_rgba(30,40,80,0.18)]">
               {hero.headline}
             </h1>
-            <p className="max-w-[52ch] text-balance text-lg text-white/90">{hero.intro}</p>
             <a
               href="#contact"
               className={`${btn} bg-ink text-white hover:bg-black`}
@@ -155,6 +156,28 @@ export default function Home() {
                 </li>
               ))}
             </ol>
+
+            {/* FAQ: the worries a small-business owner has before reaching out. Native
+                <details>, so it opens and closes with no JavaScript. */}
+            <h3 className="mb-6 mt-24 font-display text-[clamp(32px,4vw,52px)] leading-none">
+              {process.faqHeadline}
+            </h3>
+            <div className="flex max-w-[820px] flex-col gap-3">
+              {process.faq.map((f) => (
+                <details
+                  key={f.q}
+                  className="group rounded-[22px] border border-white/20 bg-white/10 px-6 py-5 backdrop-blur-md"
+                >
+                  <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-[19px] font-bold [&::-webkit-details-marker]:hidden">
+                    {f.q}
+                    <span aria-hidden="true" className="text-2xl font-normal text-sky-4 transition-transform group-open:rotate-45">
+                      +
+                    </span>
+                  </summary>
+                  <p className="mt-3 text-white/90">{f.a}</p>
+                </details>
+              ))}
+            </div>
           </div>
         </section>
 
@@ -163,32 +186,26 @@ export default function Home() {
             <h2 className="max-w-[22ch] font-display text-[clamp(40px,5.5vw,76px)] leading-[1.02] text-white [text-shadow:0_2px_30px_rgba(30,40,80,0.18)]">
               {contact.headline}
             </h2>
-            {/* Email always shows; the call and text buttons appear once site.ts has a link or number. */}
-            <div className="flex flex-wrap justify-center gap-3">
-              <a
-                href={`mailto:${site.email}`}
-                className={`${btn} bg-ink text-[19px] text-white hover:bg-black`}
-              >
+            <ProjectForm />
+
+            {/* Other ways in. Email always shows; the call and text links appear once
+                site.ts has a booking link or number. */}
+            <p className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-ink">
+              <span>{contact.otherWays}</span>
+              <a href={`mailto:${site.email}`} className="font-semibold underline underline-offset-4">
                 {contact.button}
               </a>
               {site.bookingUrl && (
-                <a
-                  href={site.bookingUrl}
-                  className={`${btn} bg-white text-[19px] text-ink hover:bg-white/85`}
-                >
+                <a href={site.bookingUrl} className="font-semibold underline underline-offset-4">
                   {contact.bookButton}
                 </a>
               )}
               {site.phone && (
-                <a
-                  href={`sms:${site.phone}`}
-                  className={`${btn} bg-white text-[19px] text-ink hover:bg-white/85`}
-                >
+                <a href={`sms:${site.phone}`} className="font-semibold underline underline-offset-4">
                   {contact.textButton}
                 </a>
               )}
-            </div>
-            <p className="text-ink">{contact.note}</p>
+            </p>
 
             {/* The person behind the work, so it reads as reaching Kyle, not filing a ticket. */}
             <div className="mt-10 flex w-full max-w-[720px] flex-col items-center gap-5 rounded-[32px] border border-white/60 bg-white/45 p-7 text-left shadow-[0_30px_70px_-40px_rgba(60,64,120,0.5)] backdrop-blur-md sm:flex-row sm:items-start sm:gap-7 sm:p-9">

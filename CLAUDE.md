@@ -55,9 +55,9 @@ page must stay prerendered (`○ /` in the build output). No backend, no databas
 
 ## Open items
 
-- Real email address (placeholder in `site.email`), plus `site.bookingUrl` and `site.phone`: the "Book a 15-minute call" and "Text me" buttons appear once they are filled in (Kyle, 2026-10-17: visitors should be able to email, book or text).
+- **The main CTA is the project form** (Kyle, 2026-10-17): `ProjectForm.tsx`, a "what are you looking for" form (ideas, wishlist, examples/visuals, timeline) emailed to Kyle so he can quote. **No prices or dollar figures anywhere on the site**; every project is custom. The form is plain HTML posting to a hosted form service (`site.formEndpoint`, e.g. Formspree), which is the one exception to "no backend". Until it is set, the form falls back to the visitor's mail app.
+- Placeholders still to fill: `site.email`, `site.formEndpoint`, `site.bookingUrl`, `site.phone` (the last two show "Book a call" / "Text" links only once filled).
 - Audience (Kyle, 2026-10-17): any small business, anywhere. Copy follows the `copywriting` skill from coreyhaines31/marketingskills: no invented proof, no AI tells.
-- Pricing: not shown yet, by choice.
 - Design pass from example sites Kyle will send.
 
 ## Build check

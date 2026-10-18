@@ -150,6 +150,12 @@ export function Work() {
                 </h4>
                 <p className="mt-1 text-ink-soft">{f.built}</p>
               </div>
+              <div>
+                <h4 className="text-[15px] font-bold text-muted">
+                  For your business
+                </h4>
+                <p className="mt-1 text-ink-soft">{f.forYou}</p>
+              </div>
               {f.href && (
                 <a
                   href={f.href}
@@ -202,6 +208,7 @@ export function Work() {
                     {f.tagline}.
                   </p>
                   <p className="text-ink-soft">{f.headline}</p>
+                  <p className="text-[15px] text-muted">{f.forYou}</p>
                 </div>
               </article>
             );
