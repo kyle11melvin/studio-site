@@ -25,9 +25,6 @@
   --font-sans: var(--font-schibsted), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-instrument), Georgia, serif;
   --font-logo: var(--font-cormorant), Georgia, serif;
-  --font-display-num: var(--font-anton), Impact, sans-serif;
-  --font-serif: var(--font-source-serif), Georgia, serif;
-  --font-mono: var(--font-plex-mono), ui-monospace, monospace;
 }
 
 html {
@@ -330,7 +327,7 @@ body:has(#sent:target) .sticky-cta {
 @media (prefers-reduced-motion: no-preference) {
   .swipe-nudge {
     display: inline-block;
-    animation: swipe-nudge 1.6s ease-in-out infinite;
+    animation: swipe-nudge 1.6s ease-in-out 3;
   }
 }
 @keyframes swipe-nudge {
@@ -344,7 +341,7 @@ body:has(#sent:target) .sticky-cta {
    width (`view(inline)`): small at the edges, biggest at the center. */
 .app-tile-card {
   box-shadow: 0 18px 40px -22px rgba(5, 10, 30, 0.8);
-  transition: background-color 0.2s;
+  transition: background-color 0.35s;
 }
 .app-tile-icon {
   box-shadow: 0 10px 24px -10px rgba(0, 0, 0, 0.6);
@@ -356,7 +353,6 @@ body:has(#sent:target) .sticky-cta {
       animation-timeline: view(inline);
       animation-range: cover 0% cover 100%;
       transform-origin: center;
-      will-change: transform;
     }
     .app-tile-card .app-tile-icon {
       animation: app-tile-icon-pop linear both;

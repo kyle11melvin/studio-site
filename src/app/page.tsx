@@ -22,7 +22,7 @@ const shipped = [
   { name: "Switchboard", className: "font-extrabold tracking-[-0.02em]" },
   { name: "ANVIL", className: "font-extrabold tracking-[0.14em]" },
   { name: "Bird Dog", className: "font-[Georgia,serif] text-[21px]" },
-  { name: "EDGE DESK", className: "font-display-num text-[21px]" },
+  { name: "EDGE DESK", className: "font-black tracking-[0.04em]" },
   { name: "The Huddle", className: "font-bold" },
   { name: "DefendItOwnIt", className: "font-semibold" },
 ];

@@ -292,7 +292,7 @@ export function Work() {
                       alt=""
                       width={b.stack ? 104 : 132}
                       height={b.stack ? 104 : 132}
-                      className="rounded-[30px] shadow-[0_30px_60px_-20px_rgba(0,0,0,0.7)] transition-transform duration-500 group-hover:-translate-y-1.5 group-hover:rotate-[-3deg]"
+                      className="rounded-[32px] shadow-[0_30px_60px_-20px_rgba(0,0,0,0.7)] transition-transform duration-500 group-hover:-translate-y-1.5 group-hover:rotate-[-3deg]"
                       style={{ boxShadow: `0 30px 60px -20px rgba(0,0,0,0.7), 0 0 60px -6px ${b.glow}` }}
                     />
                   </div>
