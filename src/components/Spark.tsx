@@ -29,7 +29,7 @@ export function Spark() {
             <feGaussianBlur stdDeviation="0.45" />
           </filter>
         </defs>
-        <ellipse cx="60" cy="30" rx="26" ry="13" fill="url(#spark-halo)" />
+        <ellipse className="spark-halo" cx="60" cy="30" rx="26" ry="13" fill="url(#spark-halo)" />
         <g fill="none" strokeLinecap="round" strokeLinejoin="round">
           {/* outer glow, inner glow, then the white-hot core */}
           <g stroke="#8ea4ff" strokeWidth="3.6" opacity="0.8" filter="url(#spark-glow)">

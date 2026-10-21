@@ -132,6 +132,46 @@ body {
    object-cover in a box that is 100vw wide and clamp(260px,38vw,540px) tall, so its rendered
    width is max(100vw, box height x 1.777). The SVG is 12.4% of that width, so the glint spans
    the gap between the two fingertips. */
+/* The moment of contact (genjutsu cast thesis, Kyle 2026-10-21): once per visit, as the page
+   lands, the spark's halo blooms and settles over 700ms while the headline, button and audience
+   line rise 10px into place in a short stagger. Then everything is still; the arc never moves. */
+@media (prefers-reduced-motion: no-preference) {
+  .hero-rise {
+    animation: hero-rise 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  }
+  .hero-rise-2 {
+    animation-delay: 0.12s;
+  }
+  .hero-rise-3 {
+    animation-delay: 0.2s;
+  }
+  .spark-halo {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: spark-bloom 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) 0.15s both;
+  }
+}
+@keyframes hero-rise {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes spark-bloom {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  45% {
+    opacity: 1;
+    transform: scale(1.35);
+  }
+}
+
 .spark {
   --hands-h: clamp(260px, 38vw, 540px);
   --hands-w: max(100vw, calc(var(--hands-h) * 1.7768));
@@ -346,6 +386,15 @@ body:has(#sent:target) .sticky-cta {
 .app-tile-icon {
   box-shadow: 0 10px 24px -10px rgba(0, 0, 0, 0.6);
 }
+.app-tile-icon::after {
+  content: "";
+  position: absolute;
+  inset: -40% -60%;
+  background: linear-gradient(115deg, transparent 40%, rgba(255, 255, 255, 0.55) 50%, transparent 60%);
+  transform: translateX(-70%);
+  opacity: 0;
+  pointer-events: none;
+}
 @supports (animation-timeline: view()) {
   @media (prefers-reduced-motion: no-preference) {
     .app-tile-card {
@@ -358,6 +407,12 @@ body:has(#sent:target) .sticky-cta {
       animation: app-tile-icon-pop linear both;
       animation-timeline: view(inline);
       animation-range: cover 0% cover 100%;
+    }
+    /* the sheen slides across as the tile passes the centre of the row */
+    .app-tile-card .app-tile-icon::after {
+      animation: icon-sheen linear both;
+      animation-timeline: view(inline);
+      animation-range: cover 38% cover 62%;
     }
   }
 }
@@ -407,6 +462,9 @@ body:has(#sent:target) .sticky-cta {
     animation: none;
     transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.35s;
   }
+  .app-tile-card .app-tile-icon::after {
+    animation: none;
+  }
   /* Kyle 2026-10-18: "pop more". The hovered tile lifts well clear of the row, brightens,
      and gets a soft light ring; the icon rises further and tilts back a touch. */
   .app-tile-card:hover {
@@ -426,5 +484,30 @@ body:has(#sent:target) .sticky-cta {
   .app-tile-card:active {
     transform: scale(1.08) translateY(-8px);
     transition-duration: 0.1s;
+  }
+  /* A row that reacts (genjutsu cast thesis, Kyle 2026-10-21): the two neighbours lean 4deg
+     away from the hovered tile, and one sheen crosses its icon, the way light slides over a
+     glossy app icon. */
+  .app-tile-card {
+    transform-origin: 50% 100%;
+  }
+  .app-tile:hover + .app-tile .app-tile-card {
+    transform: rotate(4deg) translate(6px, 2px);
+  }
+  .app-tile:has(+ .app-tile:hover) .app-tile-card {
+    transform: rotate(-4deg) translate(-6px, 2px);
+  }
+  .app-tile-card:hover .app-tile-icon::after {
+    animation: icon-sheen 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) 0.08s both;
+  }
+}
+@keyframes icon-sheen {
+  from {
+    transform: translateX(-70%);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(70%);
+    opacity: 0;
   }
 }

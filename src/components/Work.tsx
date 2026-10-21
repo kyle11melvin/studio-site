@@ -141,13 +141,10 @@ export function Work() {
                 href={`#${c.id}`}
                 className="app-tile-card flex w-[148px] flex-col gap-2.5 rounded-[22px] border border-white/12 bg-[rgba(255,255,255,0.07)] p-4 hover:bg-white/[0.12]"
               >
-                <Image
-                  src={icon(c.id)}
-                  alt=""
-                  width={72}
-                  height={72}
-                  className="app-tile-icon rounded-[17px]"
-                />
+                {/* The span carries the one-time sheen (::after) that crosses the icon on hover. */}
+                <span className="app-tile-icon relative block h-[72px] w-[72px] overflow-hidden rounded-[17px]">
+                  <Image src={icon(c.id)} alt="" width={72} height={72} />
+                </span>
                 <span className="text-[17px] font-extrabold leading-tight tracking-[-0.02em]">
                   {c.name}
                 </span>
